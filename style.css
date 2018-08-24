@@ -1,0 +1,301 @@
+/*
+Theme Name: Whoop
+Theme URI: https://wpgeodirectory.com/downloads/supreme-directory/
+Description:
+Author: GeoDirectory
+Author URI: https://wpgeodirectory.com/
+Template: directory-starter
+Version: 1.0.0
+License: GPLv2 or greater
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: whoop
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body {background: #FFF !important;}
+ul {list-style: none;}
+.content-box.content-page {margin-top: 20px;}
+.whoop-common.whoop-featured .featured-area {height: 100vh;align-items: center;display: flex;min-height: 350px;flex-direction: column;padding: 0;position: relative;text-align: center;}
+.whoop-common.whoop-featured .featured-area .featured-header-img {background-color: #f9f9f9;background-position: 50% 20%;background-repeat: no-repeat;background-size: cover;border-bottom: 1px solid rgba(0, 0, 0, 0.075);height: 100%;left: 0;position: absolute;top: 0;width: 100%;z-index: 0;overflow: hidden;}
+.whoop-common.whoop-featured .featured-header-wrap {flex-grow: 1;justify-content: center;display: flex;flex-direction: column;margin: 0 auto;padding: 0 30px;width: 70%;}
+.whoop-common.whoop-featured .featured-header-wrap .site-logo {position: relative;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container .geodir-loc-bar {border: 0px;margin-bottom: 5px;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container .geodir-loc-bar-in {background: 0;border: 0;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container .geodir-loc-bar-in input {height: 45px !important;font-size: 18px !important;font-weight: bold;text-transform: capitalize;padding-left: 30px !important;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container .geodir-loc-bar-in span.gd-icon-hover-swap {line-height: 35px !important;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container .geodir-loc-bar-in button.geodir_submit_search {margin: 5px 0 0 0 !important;height: 45px !important;vertical-align: middle;border: 0px;padding: 0 20px;background: #d32323;font-size: 18px;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container .geodir-loc-bar-in button.geodir_submit_search:hover {background: #be2020;}
+.whoop-common.whoop-featured header#site-header {background-color: transparent;box-shadow: none;border: 0 none;position: absolute;top: 0;width: 100%;z-index: 1111;}
+.whoop-common.whoop-featured header#site-header {background-color: transparent;box-shadow: none;border: 0 none;position: absolute;top: 0;width: 100%;z-index: 1111;}
+.whoop-common.whoop-featured header#site-header ul.menu {float: left;}
+.whoop-common.whoop-featured .whoop-header-nav {width: 20%;display: inline-block;text-align: right;}
+.whoop-common.whoop-featured .whoop-header-nav ul.menu {float: right !important;margin-top: 25px;list-style: none;}
+.whoop-common.whoop-featured .featured-header-wrap .site-logo img {width: 100px;}
+.whoop-common.whoop-featured .whoop-header-nav ul.menu li {display: inline-block;line-height: 30px;margin: 0 5px;}
+.whoop-common.whoop-featured .whoop-header-nav ul.menu li a {color: #fff;font-size: 14px;position: relative;z-index: 1111;padding: 10px 20px;margin: 0;border: 0px;font-weight: bold;text-transform: uppercase;}
+.whoop-common.whoop-featured .whoop-header-nav ul.menu li.nav-signup a {background: transparent;border: 2px solid #FFF;border-radius: 5px;}
+.whoop-common.whoop-featured .whoop-header-nav ul.menu li.nav-signup a:hover {background: #FFF;color: #5a5757;}
+.whoop-common.whoop-featured .whoop-header-nav ul.menu li.nav-login a:hover {border-bottom: 2px solid #FFF;}
+.whoop-common footer#footer {background: #f5f5f5;}
+.whoop-common footer#footer .footer-widgets {background: #f5f5f5;margin: 0;border: 0;}
+.whoop-common footer#footer  .copyright {background: #f5f5f5;border-top: 0px !important;}
+.whoop-common footer#footer .copyright p.copyright-text {float: left;width: 100%;padding: 20px 0 0 10px;color: #666666;font-size: 16px;}
+.whoop-common footer#footer .copyright p.copyright-text a {color: #000;font-weight: bold;}
+.whoop-common footer#footer .footer-widgets h4.widgettitle {font-size: 16px;color: #d32323;font-weight: bold;text-transform: capitalize;border: 0px;margin: 20px 0 10px 0px;}
+.whoop-common footer#footer .footer-widgets ul li {margin: 5px 0;color: #000;}
+.whoop-common footer#footer .footer-widgets a {color: #0073bb;cursor: pointer;}
+.whoop-common footer#footer .footer-widgets a:hover {text-decoration: underline;}
+.whoop-common footer#footer .footer-widgets #geodir-bestof-places ul {width: 100%;}
+.whoop-common footer#footer .footer-widgets ul .gd-list-item-left {width: 100%;}
+.whoop-common footer#footer .footer-widgets ul .gd-list-item-right {width: 100%;border-bottom: 1px solid #CCC;}
+.whoop-common footer#footer .footer-widgets ul .gd-list-item-right .geodir-post-title {margin: 5px 0;}
+.whoop-common footer#footer .footer-widgets ul .gd-list-item-right p.gd-read-more {background: #FFF;padding: 5px 0;margin: 0;border-radius: 5px;border: 1px solid;}
+.whoop-common header#site-header ul.menu li.nav-account {position: relative;float: left;}
+.whoop-common header#site-header ul.menu li.nav-account a.whoop-account-link {vertical-align: top;text-align: center;position: relative;display: inline-block;background: rgba(0,0,0,.25);padding: 0;border-radius: 5px;}
+.whoop-common header#site-header ul.menu li.nav-account a.whoop-account-link img {vertical-align: middle;border: 2px solid #FFF;border-radius: 5px 0 0 5px;}
+.whoop-common header#site-header ul.menu li.nav-account a.whoop-account-link span {padding: 5px;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel {display: none;position: absolute;float: left;z-index: 99999;right: 0;padding: 10px;min-width: 217px;background: #fff;border: 1px solid #ccc;border-color: rgba(0,0,0,.2);border-radius: 3px;-webkit-box-shadow: 0 2px 8px rgba(0,0,0,.2);box-shadow: 0 2px 8px rgba(0,0,0,.2);-webkit-box-sizing: border-box;box-sizing: border-box;margin-top: 12px;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel:before {content: '';width: 0;height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 15px solid #fff;position: absolute;right: 15px;top: -11px;}
+.whoop-common.whoop-common-header header#site-header .site-logo-wrap .site-logo {width: 70%;height: 0;margin: 5px 0;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel:before {content: '';width: 0;height: 0;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 15px solid #fff;position: absolute;right: 15px;top: -11px;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel .whoop-avatar-wrap {float: left;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel .whoop-avatar-wrap a {margin: 0;padding: 0;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel h4 {width: 100%;margin: 0;text-align: center;margin-top: 10px;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel h4 a {color: #000000c9;text-transform: capitalize;font-size: 18px;padding: 0;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel  p.user-review-count {font-size: 16px;text-align: right;margin: 10px 15px 0 0;color: #bd1f1f;font-weight: bold;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu {float: left;margin: 5px 0 0 0;width: 100%;text-align: left;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li {display: inline-block;line-height: 30px;margin: 0 5px;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li a {color: #363636;text-transform: capitalize;font-size: 16px;padding: 0;}
+.whoop-common.whoop-common-header header#site-header {background: #d32323;box-shadow: 0 0;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search {width: 70%;display: inline-block;}
+.whoop-common.whoop-common-header header#site-header .site-logo-wrap {width: 15%;float: left;margin-right: 15px;min-height: 50px;line-height: 35px;}
+.whoop-common.whoop-common-header header#site-header .whoop-common-page-menu {background: #bd1f1f;margin-top: 10px;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search .geodir-search-container {width: 80%;float: left;margin: 0;padding: 0;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search .whoop-header-nav {text-align: left;float: right;width: 20%;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search .whoop-header-nav ul.menu {margin: 20px 0 0 0;}
+.whoop-common.whoop-common-header.whoop-logged-user header#site-header .ds-child-header-search .whoop-header-nav {width: 15% !important;}
+.whoop-common.whoop-common-header.whoop-logged-user header#site-header .ds-child-header-search .whoop-header-nav ul.menu {margin: 15px 0 0 0;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search .geodir-loc-bar {padding: 0;border: 0;margin: 10px 0 0 0;background: transparent;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search .geodir-loc-bar .clearfix.geodir-loc-bar-in {background: 0;border: 0;padding: 0;margin: 0;}
+.whoop-common.whoop-common-header header#site-header .site-logo-wrap .site-logo.default-logo {width: 70px;height: 71px;margin: 0 auto;}
+.whoop-common.whoop-common-header header#site-header .site-logo-wrap .site-logo.default-logo img {width: 80%;padding: 10px 0;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search .whoop-header-nav ul.menu li.nav-signup {display: inline-block;line-height: 30px;margin: 0 5px;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search .whoop-header-nav ul.menu li.nav-signup a {background: #bd1f1f !important;border: 0px !important;padding: 10px 25px !important;color: #fff;font-size: 14px;position: relative;z-index: 1111;margin: 0;font-weight: bold;text-transform: uppercase;border-radius: 5px;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search .whoop-header-nav ul.menu li.nav-signup a:hover {background: #a71c1c !important;}
+.whoop-common header#site-header .ds-child-header-search .geodir-loc-bar button.geodir_submit_search {background: #bd1f1f;border: 0;}
+.whoop-common header#site-header .ds-child-header-search .geodir-loc-bar button.geodir_submit_search:hover {background: #a71c1c;}
+.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav {width: 80%;margin-top: 0px;margin-left: 0px;}
+.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul {float: left;}
+.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li {padding: 0;}
+.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li a {height: 30px;line-height: 30px;color: #fff;display: block;padding: 0px 20px;font-size: 13px;font-weight: bold;}
+.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li.current-menu-item a,.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li a:hover {background: #a71c1c;}
+.whoop-common.whoop-featured .featured-header-wrap .popular-category {
+width: 100%;
+display: block;
+}
+
+.whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu {
+margin: 0;
+}
+
+.whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li a {
+position: relative;
+vertical-align: middle;
+margin: 0 10px;
+color: #FFF;
+font-size: 16px;
+font-weight: bold;
+text-transform: capitalize;
+background: #00000057;
+padding: 10px;
+border-radius: 5px;
+}
+
+.whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li {
+display: inline-block;
+vertical-align: middle;
+}
+
+.whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li a img {
+width: 15px;
+margin-right: 5px;
+vertical-align: top;
+height: 20px;
+}
+
+.whoop-common.whoop-common-header.whoop-logged-user header#site-header .ds-child-header-search .whoop-header-nav ul.menu.buddypress-menu {
+border-top: 1px dotted #b7b6b4;
+border-bottom: 1px dotted #b7b6b4;
+padding: 5px 0;
+}
+
+.whoop-common .whoop-author-content {
+padding: 25px 0;
+min-height: 500px;
+display: inline-block;
+}
+
+.whoop-common .whoop-author-content .author-Profile-picture {
+width: 25%;
+float: left;
+vertical-align: top;
+}
+
+.whoop-common .whoop-author-content .author-Profile-picture img {
+border-radius: 15px;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info {
+width: 70%;
+float: left;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info h4.author-title {
+font-size: 36px;
+margin: 0;
+text-transform: capitalize;
+font-weight: bolder;
+margin-bottom: 10px;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info p.author-email {
+font-size: 22px;
+font-weight: inherit;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info .gd-author-listing {
+width: 100%;
+margin: 10px 0;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul li {
+display: inline-block;
+font-size: 18px;
+color: #bd1f1f;
+padding: 0 10px;
+border-right: 1px solid #bd1f1f;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul li p {
+display: inline-block;
+margin: 0px 6px 0 0;
+color: #bd1f1f;
+text-align: center;
+vertical-align: top;
+font-weight: bold;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul li a {
+color: #bd1f1f;
+font-weight: bold;
+text-transform: capitalize;
+}
+
+.whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul li a:hover {
+border-bottom: 1px solid #bd1f1f;
+}
+
+.whoop-common .whoop-author-content .author-listing {width: 99%;float: left; border: 1px solid #f5f5f5;border-radius: 10px;padding: 20px; margin-top: 10px;}
+.whoop-common .whoop-user-reviews {width: 100%;padding-top: 20px;border-top: 1px dotted #CCC;margin-top: 20px;}
+.whoop-common .whoop-user-reviews ul {margin: 0;list-style: none;width: 70%;border: 1px solid #f5f5f5;}
+.whoop-common .whoop-user-reviews ul li {width: 100%;background: #f5f5f5;border-radius: 0;padding: 10px;border-bottom: 1px solid #CCC;position: relative;}
+.whoop-common .whoop-user-reviews ul li .user-pic {float: left;margin-right: 15px;}
+.whoop-common .whoop-user-reviews ul li.odd {background: #FFFF;}
+.whoop-common .whoop-user-reviews ul li .comment-stars {position: absolute;right: 15px;top: 0;display: inline-block;}
+.whoop-common .whoop-user-reviews ul li .review-post a {font-size: 16px;color: #bd1f1f;}
+.whoop-common .whoop-user-reviews ul li .review-post a:hover {color: #e63636;}
+.whoop-common .whoop-user-reviews ul li .user-pic img {border-radius: 5px;}
+.whoop-common .whoop-user-reviews ul li .review-time {margin-right: 15px;font-weight: bold;position: absolute;right: 10px;bottom: 5px;}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing {}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container {
+	width: 100%;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view {
+	width: 100%;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li {
+	width: 100%;
+	float: left;
+	border-bottom: 1px solid #d2cccc;
+	padding: 20px 0;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-left {
+	width: 30%;
+	float: left;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right {
+	width: 70%;
+	float: left;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-title {
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .review-html {
+	padding: 10px 0;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .review-count {
+	font-size: 16px;
+	color: #bd1f1f;
+	padding-bottom: 5px;
+	text-transform: capitalize;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-title a {
+	color: #bd1f1f;
+	font-weight: bold;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right  .post-content {
+	font-size: 16px;
+	text-transform: capitalize;
+	padding: 5px 0;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right  .post-date {
+	font-size: 16px;
+	padding: 5px 0;
+	color: #bd1f1f;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right  .post-categories {}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right  .post-categories a {
+	font-size: 16px;
+	color: #bd1f1f;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-categories a:hover {
+	color: #d32323;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-status {
+	font-size: 16px;
+	padding: 5px 0;
+	color: #bd1f1f;
+	text-transform: capitalize;
+}
+
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-status span {
+	color: #757575;
+	margin: 0 5px;
+	font-weight: bold;
+}
