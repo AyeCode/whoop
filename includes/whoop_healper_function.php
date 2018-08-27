@@ -12,12 +12,9 @@ function whoop_header_nav() {
 				</li>
 
 			<?php } else { ?>
-
-				<?php if( is_front_page()) { ?>
 					<li class="nav-login">
 						<a href="<?php echo apply_filters('whoop_login_url', wp_login_url() ); ?>"><?php echo apply_filters('whoop_login_text', __('Log in','whoop'));  ?></a>
 					</li>
-				<?php }  ?>
 					<li class="nav-signup">
 						<a href="<?php echo apply_filters('whoop_register_url', wp_login_url().'?action=register' ); ?>"><?php echo apply_filters('whoop_register_text', __('Sign up','whoop'));  ?></a>
 					</li>
@@ -51,13 +48,17 @@ function whoop_current_user_account() {
 		$author_name = !empty( $current_user_data->first_name ) ? $current_user_data->first_name.' '.$current_user_data->last_name : '';
 
 	}
+
 	?>
 	<div id="whoop_user_account_panel" class="account-panel">
 		<div class="whoop-avatar-wrap">
 			<a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo $avatar; ?></a>
 		</div>
 		<h4><a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo esc_attr($author_name); ?></a></h4>
-		<p class="user-review-count"><i class="fa fa-star"></i> <?php echo get_user_review_count( $current_user->ID ); ?></p>
+		<div class="user-counts">
+			<p class="user-review-count"><i class="fa fa-star"></i> <?php echo get_user_review_count( $current_user->ID ); ?></p>
+			<p class="user-fav-count"><i class="fa fa-bookmark"></i> <?php echo whoop_user_favourite($current_user->ID,'count'); ?></p>
+		</div>
 		<?php if (class_exists('BuddyPress')) { ?>
 			<ul class="menu buddypress-menu">
 				<li>
@@ -165,15 +166,22 @@ function whoop_user_review( $user_id ) {
 					$comment_date = mysql2date('U', $get_comment->comment_date, true);
 					$comment_time = !empty( $comment_date ) ? human_time_diff( $comment_date) :'';
 
-					$user_link = get_author_posts_url($user_id);
-
 					$ratings_display = GeoDir_Comments::rating_html($review_value->rating, 'output');
+
+					$review_content = $get_comment->comment_content;
+
+					if( strlen ( $get_comment->comment_content ) > 150 ) {
+
+						$review_content = substr($get_comment->comment_content, 0, 150).'...';
+
+					}
+
 					?>
 					<li class="<?php echo ( $review_key % 2 == 0 ) ? 'even' : 'odd'; ?>">
-						<div class="user-pic"><a class="<?php echo $post_class; ?>" href="<?php echo $user_link; ?>"><?php echo $post_thumbnail; ?></a></div>
+						<div class="user-pic"><a class="<?php echo $post_class; ?>" href="<?php echo get_the_permalink($review_value->post_id); ?>"><?php echo $post_thumbnail; ?></a></div>
 						<div class="comment-stars"><?php echo $ratings_display; ?></div>
 						<div class="review-post"><a  href="<?php echo get_the_permalink($review_value->post_id); ?>"><?php echo get_the_title($review_value->post_id); ?></a></div>
-						<div class="review-comment"><p><?php echo $get_comment->comment_content; ?></p></div>
+						<div class="review-comment"><p><?php echo $review_content; ?></p></div>
 						<div class="review-time"><a href="<?php echo $comment_url; ?>"><?php echo !empty( $comment_time ) ? $comment_time.' ago' :''; ?></a></div>
 					</li>
 					<?php
@@ -267,6 +275,12 @@ function whoop_user_listing( $user_id ) {
 
 						}
 
+						$custom_fields = GeoDir_Settings_Cpt_Cf::get_cpt_custom_fields( $posttyps );
+
+						$get_bz_cf = get_business_hours_cf($custom_fields);
+
+						$business_hours = geodir_cf_business_hours( '','',$get_bz_cf,$listing_value->ID,'' );
+
 						?>
 						<li id="post-<?php echo $listing_value->ID; ?>" <?php post_class('',$listing_value->ID); ?> >
 							<div class="whoop-post-left">
@@ -274,12 +288,14 @@ function whoop_user_listing( $user_id ) {
 							</div>
 							<div class="whoop-post-right">
 								<div class="post-title"><a href="<?php echo get_the_permalink($listing_value->ID); ?>"><?php echo $listing_value->post_title; ?></a></div>
+								<div class="post-categories"><i class="fa fa-tags "></i>  <?php echo $categories; ?></div>
 								<div class="review-html"><?php echo $ratings_display; ?></div>
 								<div class="review-count"><?php echo ( $get_review_count > 0 ) ? $get_review_count.' reviews' : 'No reviews'; ?></div>
-								<div class="post-content"><?php echo $post_content; ?></div>
+								<div class="post-favorite-list"><span class="gd-list-favorite"><?php geodir_favourite_html( '', $listing_value->ID ); ?></span></div>
+								<div class="post-business-hour"><?php echo $business_hours; ?></div>
 								<div class="post-date"><?php echo $post_date_time.' ago'; ?></div>
 								<div class="post-status"><i class="fa fa-play"></i> <span>Status: </span> <?php echo $listing_value->post_status; ?></div>
-								<div class="post-categories"><i class="fa fa-tags "></i>  <?php echo $categories; ?></div>
+								<div class="post-content"><?php echo strip_tags($post_content); ?></div>
 							</div>
 						</li>
 						<?php
@@ -291,5 +307,98 @@ function whoop_user_listing( $user_id ) {
 		</div>
 	</div>
 	<?php
+}
 
+function get_business_hours_cf( $cf_array ) {
+
+	if( empty( $cf_array ) ){
+		return false;
+	}
+
+	$bz_hr_cf = '';
+	foreach ( $cf_array as $cf_key => $cf_value ) {
+
+		if( !empty( $cf_value->field_type ) && 'business_hours' === $cf_value->field_type ) {
+			$bz_hr_cf = (array) $cf_value;
+		}
+
+	}
+
+	return $bz_hr_cf;
+
+}
+
+function whoop_user_favourite($user_id, $response = 'html'){
+
+	$site_id = '';
+	if ( is_multisite() ) {
+		$blog_id = get_current_blog_id();
+		if ( $blog_id && $blog_id != '1' ) {
+			$site_id = '_' . $blog_id;
+		}
+	}
+
+	$get_fav_listing = get_user_meta( $user_id,'gd_user_favourite_post'.$site_id,true);
+
+	if( 'html' === $response ) {
+
+		?>
+		<div class="whoop-user-favourite">
+			<ul>
+			<?php
+			if( !empty( $get_fav_listing ) && is_array( $get_fav_listing ) ) {
+
+				foreach ( $get_fav_listing as $fav_key => $fav_list ) {
+
+					$post_thumbnail = get_the_post_thumbnail($fav_list,array(50,50));
+
+					$post_class ='post-image';
+					if( empty( $post_thumbnail ) ) {
+						$post_thumbnail = '<img style="width:50px;height:50px;" src="'.WHOOP_PLACEHOLDER_IMAGE.'" >';
+						$post_class ='post-placeholder-img';
+					}
+
+					$post_date = get_the_date('',$fav_list);
+					$post_date = mysql2date('U', $post_date, true);
+					$post_date_time = !empty( $post_date ) ? human_time_diff( $post_date) :'';
+
+					$get_posttype = get_post_type($fav_list);
+
+					$taxonomy = geodir_get_taxonomies( $get_posttype );
+					$get_taxonomy = get_the_terms($fav_list,$taxonomy[0]);
+
+					$temp_arr = array();
+
+					if( !empty( $get_taxonomy ) && is_array( $get_taxonomy ) ) {
+
+						foreach ( $get_taxonomy as $taxonomy_key => $taxonomy_value ) {
+							$term_url = get_term_link($taxonomy_value->term_id);
+							$temp_arr[]= "<a href='$term_url'>$taxonomy_value->name</a>";
+						}
+
+					}
+					$categories = !empty( $temp_arr ) ? implode( ' | ', $temp_arr) :'';
+
+					?>
+					<li class="<?php echo ( $fav_key % 2 == 0 ) ? 'even' :'odd'; ?>">
+						<div class="post-thumb"><a class="<?php echo $post_class; ?>" href="<?php echo get_the_permalink($fav_list); ?>"><?php echo $post_thumbnail; ?></a></div>
+						<div class="post-title"><a href="<?php echo get_the_permalink($fav_list); ?>"><?php echo get_the_title($fav_list); ?></a></div>
+						<div class="post-category"><i class="fa fa-tags "></i> <?php echo $categories; ?></div>
+						<div class="post-time"><?php echo $post_date_time.' ago';; ?></div>
+						<div class="post-fav"><?php geodir_favourite_html( $user_id, $fav_list ); ?></div>
+					</li>
+					<?php
+				}
+
+			}
+			?>
+			</ul>
+		</div>
+		<?php
+
+	} else{
+
+		return !empty( $get_fav_listing ) ? count( $get_fav_listing ) : 0;
+
+	}
 }

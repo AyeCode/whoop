@@ -84,16 +84,7 @@
 						</nav>
 						<?php
 						echo apply_filters( 'dt_mobile_menu_button', '<div class="dt-nav-toggle  dt-mobile-nav-button-wrap"><a class="menu-open" href="#primary-nav"><i class="fa fa-bars"></i></a><a class="menu-close"><i class="fa fa-close"></i></a></div>' );
-						if( !is_user_logged_in() ) {
-							?>
-							<div class="header-login-nav">
-								<ul class="menu">
-									<li class="nav-login">
-										<a href="<?php echo apply_filters('whoop_login_url', wp_login_url() ); ?>"><?php echo apply_filters('whoop_login_text', __('Log in','whoop'));  ?></a>
-									</li>
-								</ul>
-							</div>
-						<?php } ?>
+						?>
 					</div>
 				</div>
 			<?php }
