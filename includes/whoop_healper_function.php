@@ -1,4 +1,10 @@
 <?php
+
+// Define Whoop theme placeholder image.
+if( !defined('WHOOP_LISTING_PER_PAGE') ) {
+	define( 'WHOOP_LISTING_PER_PAGE', 10);
+}
+
 function whoop_header_nav() {
 	?>
 	<div class="whoop-header-nav">
@@ -11,14 +17,19 @@ function whoop_header_nav() {
 					<?php whoop_current_user_account();?>
 				</li>
 
-			<?php } else { ?>
+			<?php } else {
+
+				if ( get_option( 'users_can_register' ) ) {
+					?>
 					<li class="nav-login">
-						<a href="<?php echo apply_filters('whoop_login_url', wp_login_url() ); ?>"><?php echo apply_filters('whoop_login_text', __('Log in','whoop'));  ?></a>
+						<a href="<?php echo apply_filters( 'whoop_login_url', wp_login_url() ); ?>"><?php echo apply_filters( 'whoop_login_text', __( 'Log in', 'whoop' ) ); ?></a>
 					</li>
 					<li class="nav-signup">
-						<a href="<?php echo apply_filters('whoop_register_url', wp_login_url().'?action=register' ); ?>"><?php echo apply_filters('whoop_register_text', __('Sign up','whoop'));  ?></a>
+						<a href="<?php echo apply_filters( 'whoop_register_url', wp_login_url() . '?action=register' ); ?>"><?php echo apply_filters( 'whoop_register_text', __( 'Sign up', 'whoop' ) ); ?></a>
 					</li>
-			<?php } ?>
+				<?php }
+
+			}?>
 
 		</ul>
 	</div>
@@ -56,8 +67,8 @@ function whoop_current_user_account() {
 		</div>
 		<h4><a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo esc_attr($author_name); ?></a></h4>
 		<div class="user-counts">
-			<p class="user-review-count"><i class="fa fa-star"></i> <?php echo get_user_review_count( $current_user->ID ); ?></p>
-			<p class="user-fav-count"><i class="fa fa-bookmark"></i> <?php echo whoop_user_favourite($current_user->ID,'count'); ?></p>
+			<p class="user-review-count"><span class="list-icon"><i class="fa fa-star"></i></span> <?php echo get_user_review_count( $current_user->ID ); ?></p>
+			<p class="user-fav-count"><span class="list-icon"><i class="fa fa-bookmark"></i></span> <?php echo whoop_user_favourite($current_user->ID,'count'); ?></p>
 		</div>
 		<?php if (class_exists('BuddyPress')) { ?>
 			<ul class="menu buddypress-menu">
@@ -71,7 +82,7 @@ function whoop_current_user_account() {
 		<?php } ?>
 		<ul class="menu">
 			<li class="nav-logout">
-				<a href="<?php echo apply_filters('gd_sd_child_logout_url',wp_logout_url(site_url())); ?>"><i class="fa fa-sign-out"></i> <?php echo apply_filters('gd_sd_child_logout_text', __('Log Out','whoop'));  ?></a>
+				<a href="<?php echo apply_filters('gd_sd_child_logout_url',wp_logout_url(site_url())); ?>"><span class="list-icon"><i class="fa fa-sign-out"></i></span> <?php echo apply_filters('gd_sd_child_logout_text', __('Log Out','whoop'));  ?></a>
 			</li>
 		</ul>
 
@@ -140,7 +151,9 @@ function whoop_user_review( $user_id ) {
 
 	global $wpdb;
 
-	$review_results = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . GEODIR_REVIEW_TABLE . " WHERE user_id = %d AND rating > 0 ORDER BY `comment_id` DESC",array($user_id)));
+	$offset = !empty( $_GET['page'] ) ? $_GET['page'] - 1 : 0;
+
+	$review_results = $wpdb->get_results($wpdb->prepare("SELECT * FROM " . GEODIR_REVIEW_TABLE . " WHERE user_id = %d AND rating > 0 ORDER BY `comment_id` DESC LIMIT %d OFFSET %d",$user_id,WHOOP_LISTING_PER_PAGE,$offset));
 
 	?>
 	<div class="whoop-user-reviews">
@@ -196,6 +209,12 @@ function whoop_user_review( $user_id ) {
 		</ul>
 	</div>
 	<?php
+	$rating_counts = $wpdb->get_results($wpdb->prepare( "SELECT count(`comment_id`) AS COUNT FROM ".GEODIR_REVIEW_TABLE." WHERE `user_id` = %d AND rating > 0 ORDER BY `comment_id` DESC", $user_id));
+
+	$total_counts = !empty( $rating_counts[0]->COUNT ) ? $rating_counts[0]->COUNT : 0;
+
+	whoop_listing_pagination($total_counts); ?>
+	<?php
 
 }
 
@@ -204,6 +223,8 @@ function whoop_user_listing( $user_id ) {
 	global $wpdb;
 
 	$posttyps = !empty( $_GET['style'] ) ? $_GET['style'] : 'gd_place';
+	$paged = !empty( $_GET['page'] ) ? $_GET['page'] : '1';
+
 	?>
 	<div class="whoop-user-listing">
 		<div class="whoopsearch-listing">
@@ -223,19 +244,20 @@ function whoop_user_listing( $user_id ) {
 			<ul class="geodir-category-list-view list-view">
 				<?php
 				$listing_args = array(
-					'posts_per_page'   => -1,
+					'posts_per_page'   => WHOOP_LISTING_PER_PAGE,
 					'orderby'          => 'date',
 					'order'            => 'DESC',
 					'post_type'        => $posttyps,
 					'author'	   => $user_id,
 					'suppress_filters' => true,
+					'paged' =>$paged,
 				);
 
-				$listing_array = get_posts( $listing_args );
+				$listing_array = new WP_Query( $listing_args );
 
-				if( !empty( $listing_array ) && count( $listing_array ) > 0 ) {
+				if( !empty( $listing_array->posts ) && count( $listing_array->posts ) > 0 ) {
 
-					foreach ( $listing_array as $listing_key => $listing_value ) {
+					foreach ( $listing_array->posts as $listing_key => $listing_value ) {
 
 						$post_thumbnail = get_the_post_thumbnail($listing_value->ID,'medium');
 						$post_thumbnail = !empty( $post_thumbnail ) ? $post_thumbnail : '<img src="'.WHOOP_PLACEHOLDER_IMAGE.'" alt="placeholder">' ;
@@ -303,8 +325,12 @@ function whoop_user_listing( $user_id ) {
 				}
 				?>
 			</ul>
-
 		</div>
+		<?php
+		$total_found_post = !empty( $listing_array->found_posts )  ? $listing_array->found_posts : 0;
+		whoop_listing_pagination($total_found_post);
+		?>
+
 	</div>
 	<?php
 }
@@ -340,15 +366,30 @@ function whoop_user_favourite($user_id, $response = 'html'){
 
 	$get_fav_listing = get_user_meta( $user_id,'gd_user_favourite_post'.$site_id,true);
 
+	$get_page = !empty( $_GET['page'] ) ? (int)$_GET['page'] : 0;
+
+	$offset = 0;
+
+	$length = WHOOP_LISTING_PER_PAGE;
+
+	if( !empty( $get_page ) && $get_page > 1 ) {
+
+		$offset = $length * ( $get_page-1 );
+
+	}
+
+	$fav_listing_arr = array_slice($get_fav_listing, $offset, $length, true);
+
+
 	if( 'html' === $response ) {
 
 		?>
 		<div class="whoop-user-favourite">
 			<ul>
 			<?php
-			if( !empty( $get_fav_listing ) && is_array( $get_fav_listing ) ) {
+			if( !empty( $fav_listing_arr ) && is_array( $fav_listing_arr ) ) {
 
-				foreach ( $get_fav_listing as $fav_key => $fav_list ) {
+				foreach ( $fav_listing_arr as $fav_key => $fav_list ) {
 
 					$post_thumbnail = get_the_post_thumbnail($fav_list,array(50,50));
 
@@ -396,9 +437,56 @@ function whoop_user_favourite($user_id, $response = 'html'){
 		</div>
 		<?php
 
+		$total_fav_count= !empty( $get_fav_listing ) ? count( $get_fav_listing ) : 0;
+
+		whoop_listing_pagination($total_fav_count);
 	} else{
 
 		return !empty( $get_fav_listing ) ? count( $get_fav_listing ) : 0;
 
 	}
+}
+
+function whoop_listing_pagination( $total_record ) {
+
+	$list_page = !empty( $total_record ) ? ceil( $total_record / WHOOP_LISTING_PER_PAGE ) : 0;
+
+	$user_link = get_author_posts_url(get_current_user_id());
+
+	$current_style =!empty( $_GET['style'] ) ? $_GET['style'] :'gd_place';
+
+	$current_page =!empty( $_GET['page'] ) ? $_GET['page'] : 1;
+
+	$pagination_link = $user_link.'?gd_dashboard=true&style='.$current_style.'&page=';
+
+	$prev_page = ( $current_page > 1 )  ? $current_page - 1 :'';
+	$next_page = ( $current_page < $list_page )  ? $current_page + 1 :'';
+
+	$prev_link = $user_link.'?gd_dashboard=true&style='.$current_style.'&page='.$prev_page;
+	$next_link = $user_link.'?gd_dashboard=true&style='.$current_style.'&page='.$next_page;
+
+	if( !empty( $list_page ) && $list_page > 1 ) {
+		?>
+		<div class="whoop-pagination">
+			<ul class="author-paginate">
+				<?php if( $current_page > 1 ) { ?>
+				<li class="prev-page"><a href="<?php echo $prev_link; ?>"><i class="fa fa-long-arrow-left"></i></a></li>
+				<?php } ?>
+
+				<?php
+				for ( $i=1; $i<=$list_page;$i++ ) {
+					?>
+					<li class="list-page <?php echo ( $current_page == $i ) ? 'active' :''; ?> "><a href="<?php echo $pagination_link.$i; ?>"><?php echo $i; ?></a></li>
+					<?php
+				}
+				?>
+
+				<?php if( $current_page < $list_page ) { ?>
+				<li class="prev-page"><a href="<?php echo $next_link; ?>"><i class="fa fa-long-arrow-right"></i></a></li>
+				<?php } ?>
+			</ul>
+		</div>
+		<?php
+	}
+
 }
