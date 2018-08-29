@@ -1,0 +1,40 @@
+@media screen and (min-width: 1366px) {
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container {width: 80%;}
+}
+@media screen and (max-width: 1024px) {
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container {width: 100%;margin: 0 auto;}
+.whoop-common.whoop-featured .featured-header-wrap {width: 80%;padding: 0;}
+}
+
+@media screen and (max-width: 992px) {
+.whoop-common.whoop-featured .whoop-header-nav {float: right;}
+.whoop-common.whoop-featured .whoop-header-nav ul.menu {margin: 20px 0 0 0; width: 80%;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container {width: 100%;}
+.whoop-common.whoop-featured .featured-header-wrap {width: 80%;padding: 0;}
+.whoop-common .site-header,.whoop-common .site-header .container{overflow: visible;}
+}
+
+@media screen and (max-width: 720px) {
+body .geodir-listing-search.gd-search-bar-style .geodir-loc-bar .clearfix.geodir-loc-bar-in .geodir-search .gd-search-input-wrapper {width: 100%;flex: auto;}
+}
+
+@media screen and (max-width: 640px) {
+.whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li {width: 45%;margin: 0 5px;}
+.whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li a {width: 100%;display: block;margin: 0;}
+}
+
+@media screen and (max-width: 600px) {
+.whoop-common.whoop-featured .whoop-header-nav {margin-top: 40px;}
+.whoop-common.whoop-featured .dt-nav-toggle {top: 65px;}
+.whoop-common.whoop-featured .whoop-header-nav ul.menu {width: 100%;}
+}
+
+@media screen and (max-width: 480px) {
+.whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li {width: 100%;margin:5px 0px;padding: 0px;}
+.whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li a {width: 100%;display: block;margin: 0;}
+.whoop-common.whoop-featured .whoop-header-nav{width: 30%}
+}
+
+@media screen and (max-width: 320px) {
+
+}

@@ -41,6 +41,7 @@
 				</div>
 				<?php
 			}
+			do_action('dt_after_site_logo');
 			if( is_front_page() ) {
 
 				do_action( 'whoop_before_nav');

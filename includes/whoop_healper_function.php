@@ -62,30 +62,31 @@ function whoop_current_user_account() {
 
 	?>
 	<div id="whoop_user_account_panel" class="account-panel">
-		<div class="whoop-avatar-wrap">
-			<a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo $avatar; ?></a>
-		</div>
-		<h4><a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo esc_attr($author_name); ?></a></h4>
-		<div class="user-counts">
-			<p class="user-review-count"><span class="list-icon"><i class="fa fa-star"></i></span> <?php echo get_user_review_count( $current_user->ID ); ?></p>
-			<p class="user-fav-count"><span class="list-icon"><i class="fa fa-bookmark"></i></span> <?php echo whoop_user_favourite($current_user->ID,'count'); ?></p>
-		</div>
-		<?php if (class_exists('BuddyPress')) { ?>
-			<ul class="menu buddypress-menu">
-				<li>
-					<a href="<?php echo esc_url($user_link); ?>"><i class="fa fa-user"></i> <?php echo __('About Me', 'whoop'); ?></a>
-				</li>
-				<li>
-					<a href="<?php echo esc_url($user_link.'settings/'); ?>"><i class="fa fa-cog"></i> <?php echo __('Account Settings', 'whoop'); ?></a>
+		<div class="inner-account-panel">
+			<div class="whoop-avatar-wrap">
+				<a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo $avatar; ?></a>
+			</div>
+			<h4><a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo esc_attr($author_name); ?></a></h4>
+			<div class="user-counts">
+				<p class="user-review-count"><span class="list-icon"><i class="fa fa-star"></i></span> <?php echo get_user_review_count( $current_user->ID ); ?></p>
+				<p class="user-fav-count"><span class="list-icon"><i class="fa fa-bookmark"></i></span> <?php echo whoop_user_favourite($current_user->ID,'count'); ?></p>
+			</div>
+			<?php if (class_exists('BuddyPress')) { ?>
+				<ul class="menu buddypress-menu">
+					<li>
+						<a href="<?php echo esc_url($user_link); ?>"><i class="fa fa-user"></i> <?php echo __('About Me', 'whoop'); ?></a>
+					</li>
+					<li>
+						<a href="<?php echo esc_url($user_link.'settings/'); ?>"><i class="fa fa-cog"></i> <?php echo __('Account Settings', 'whoop'); ?></a>
+					</li>
+				</ul>
+			<?php } ?>
+			<ul class="menu">
+				<li class="nav-logout">
+					<a href="<?php echo apply_filters('gd_sd_child_logout_url',wp_logout_url(site_url())); ?>"><span class="list-icon"><i class="fa fa-sign-out"></i></span> <?php echo apply_filters('gd_sd_child_logout_text', __('Log Out','whoop'));  ?></a>
 				</li>
 			</ul>
-		<?php } ?>
-		<ul class="menu">
-			<li class="nav-logout">
-				<a href="<?php echo apply_filters('gd_sd_child_logout_url',wp_logout_url(site_url())); ?>"><span class="list-icon"><i class="fa fa-sign-out"></i></span> <?php echo apply_filters('gd_sd_child_logout_text', __('Log Out','whoop'));  ?></a>
-			</li>
-		</ul>
-
+		</div>
 	</div>
 	<?php
 

@@ -15,7 +15,7 @@ if( !function_exists( 'whoop_before_nav_fn' ) ) {
 
 }
 
-add_action('whoop_before_nav','whoop_before_nav_fn');
+add_action('dt_after_site_logo','whoop_before_nav_fn');
 
 if( !function_exists( 'whoop_after_nav_fn' ) ) {
 
