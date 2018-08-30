@@ -53,15 +53,14 @@ if( !is_user_logged_in() && !get_option( 'users_can_register' ) ){
 							$temp_post_arr = !empty( $get_gd_posttype ) ? $get_gd_posttype[$list_key] :'';
 							?>
 							<li>
-								<p class="listing-count"><?php echo $list_values; ?></p>
-								<a href="<?php echo $user_link.'?gd_dashboard=true&style='.$list_key ?>"><?php if( 'gd_place' === $list_key) { ?><span class="list-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span><?php } ?> <?php echo $temp_post_arr['labels']['name'] ; ?></a>
+								<a href="<?php echo $user_link.'?gd_dashboard=true&style='.$list_key ?>"><p class="listing-count"><?php echo $list_values; ?></p><?php if( 'gd_place' === $list_key) { ?><span class="list-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span><?php } ?> <?php echo $temp_post_arr['labels']['name'] ; ?></a>
 							</li>
 							<?php
 						}
 
 					} ?>
-					<li><p class="Review-count"><?php echo $reviews_count; ?></p><a href="<?php echo $user_link.'?gd_dashboard=true&style=reviews'; ?>"><span class="list-icon"><i class="fa fa-star"></i></span> Reviews</a></li>
-					<li><p class="favorites-count"><?php echo $fav_list_count; ?></p><a href="<?php echo $user_link.'?gd_dashboard=true&style=favourite'; ?>"><span class="list-icon"><i class="fa fa-bookmark"></i></span> Favourites</a></li>
+					<li><a href="<?php echo $user_link.'?gd_dashboard=true&style=reviews'; ?>"><p class="Review-count"><?php echo $reviews_count; ?></p><span class="list-icon"><i class="fa fa-star"></i></span> Reviews</a></li>
+					<li><a href="<?php echo $user_link.'?gd_dashboard=true&style=favourite'; ?>"><p class="favorites-count"><?php echo $fav_list_count; ?></p><span class="list-icon"><i class="fa fa-bookmark"></i></span> Favourites</a></li>
 					<?php do_action( 'whoop_after_author_listing_links'); ?>
 				</ul>
 			</div>

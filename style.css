@@ -108,7 +108,7 @@ ul {list-style: none;}
 .whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li a img {width: 15px;margin-right: 5px;vertical-align: top;height: 20px;}
 .whoop-common.whoop-common-header.whoop-logged-user header#site-header .ds-child-header-search .whoop-header-nav ul.menu.buddypress-menu {border-top: 1px dotted #b7b6b4;border-bottom: 1px dotted #b7b6b4;padding: 5px 0;}
 .whoop-common .whoop-author-content {padding: 25px 0;min-height: 500px;display: inline-block; width: 100%;}
-.whoop-common .whoop-author-content .author-Profile-picture {width: 25%;float: left;vertical-align: top;}
+.whoop-common .whoop-author-content .author-Profile-picture {width: 20%;float: left;vertical-align: top; margin-right: 25px;}
 .whoop-common .whoop-author-content .author-Profile-picture img {border-radius: 15px;}
 .whoop-common .whoop-author-content .author-Profile-info {width: 70%;float: left;}
 .whoop-common .whoop-author-content .author-Profile-info h4.author-title {font-size: 36px;margin: 0;text-transform: capitalize;font-weight: bolder;margin-bottom: 10px;}
@@ -123,7 +123,7 @@ ul {list-style: none;}
 .whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul li a:hover {border-bottom: 1px solid #bd1f1f;}
 .whoop-common .whoop-author-content .author-listing {width: 99%;float: left; border: 1px solid #f5f5f5;border-radius: 10px;padding: 20px; margin-top: 10px;}
 .whoop-common .whoop-user-reviews {width: 100%;padding-top: 20px;border-top: 1px dotted #CCC;margin-top: 20px;}
-.whoop-common .whoop-user-reviews ul {margin: 0;list-style: none;width: 70%;border: 1px solid #f5f5f5;}
+.whoop-common .whoop-user-reviews ul {margin: 0;list-style: none;width: 100%;border: 1px solid #f5f5f5;}
 .whoop-common .whoop-user-reviews ul li {width: 100%;background: #f5f5f5;border-radius: 0;padding: 10px;border-bottom: 1px solid #CCC;position: relative;}
 .whoop-common .whoop-user-reviews ul li .user-pic {float: left;margin-right: 15px;}
 .whoop-common .whoop-user-reviews ul li.odd {background: #FFFF;}
@@ -163,14 +163,15 @@ ul {list-style: none;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-favorite-list span.gd-list-favorite a {color: #bd1f1f;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-favorite-list span.gd-list-favorite a:hover {color: #d32323;}
 .whoop-common .whoop-user-favourite {width: 100%;padding-top: 20px;border-top: 1px dotted #CCC;margin-top: 20px;}
-.whoop-common .whoop-user-favourite ul {margin: 0;list-style: none;width: 70%;border: 1px solid #f5f5f5;}
+.whoop-common .whoop-user-favourite ul {margin: 0;list-style: none;width: 100%;border: 1px solid #f5f5f5;}
 .whoop-common .whoop-user-favourite ul li {width: 100%;background: #f5f5f5;border-radius: 0;padding: 10px;border-bottom: 1px solid #CCC;position: relative;}
 .whoop-common .whoop-user-favourite ul li.odd {background: #FFFF;}
 .whoop-common .whoop-user-favourite ul li .post-thumb {float: left;margin-right: 15px;width: 50px;height: 50px;}
 .whoop-common .whoop-user-favourite ul li .post-title a {font-size: 16px;color: #bd1f1f;}
 .whoop-common .whoop-user-favourite ul li  .post-fav {position: absolute;top: 10px;right: 10px;}
 .whoop-common .whoop-user-favourite ul li .post-fav a {color: #bd1f1f;font-weight: bold;}
-.whoop-common .whoop-user-favourite ul li .post-category {margin: 5px 0;}
+.whoop-common .whoop-author-content .author-listing .whoop-user-favourite ul li .post-title {text-align: left;}
+.whoop-common .whoop-user-favourite ul li .post-category {margin: 5px 0;text-align: left;}
 .whoop-common .whoop-user-favourite ul li .post-time {position: absolute;bottom: 15px;right: 20px;color: #bd1f1f;}
 .whoop-common .content-box.content-404.whoop-404 {border: 0;box-shadow: 0px 0 0;text-align: center;}
 .whoop-common .content-box.content-404.whoop-404 header.page-header h1.page-title {color: #d32323;font-weight: bold;font-size: 40px;text-transform: capitalize;margin: 20px 0;}
@@ -224,3 +225,6 @@ ul {list-style: none;}
 .whoop-common .whoop-pagination ul.author-paginate li:first-child {border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
 .whoop-common .whoop-pagination ul.author-paginate li.list-page.active {background: #f5f5f5;}
 .whoop-common .whoop-pagination ul.author-paginate li.list-page.active a {color: #333;}
+.whoop-common.whoop-logged-user .whoop-author-content .author-Profile-picture img {width: 100%;height: auto;}
+.whoop-common .whoop-author-content .author-listing .whoop-user-reviews ul li div {text-align: left;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container form .geodir-loc-bar .gd-search-input-wrapper  select {height: 45px !important;font-size: 18px !important;font-weight: bold;text-transform: capitalize;}
