@@ -3,8 +3,9 @@
 }
 
 @media screen and (max-width: 1200px) and (min-width: 992px) {
-.whoop-common.whoop-common-header header#site-header .ds-child-header-search .whoop-header-nav{width: 30%}
+.whoop-common.whoop-featured.whoop-not-logged-user header#site-header .whoop-header-nav{width: 30%}
 .whoop-common.whoop-logged-user .whoop-author-content .author-Profile-picture {margin-right: 30px;}
+.whoop-common.whoop-featured.whoop-not-logged-user nav#primary-nav {width: 70%;}
 }
 
 @media screen and (max-width: 1024px) {
@@ -14,6 +15,7 @@
 
 @media screen and (max-width: 992px) {
 .whoop-common.whoop-featured .whoop-header-nav {float: right;}
+.whoop-common.whoop-featured.whoop-not-logged-user .whoop-header-nav {display: none;}
 .whoop-common.whoop-featured .whoop-header-nav ul.menu {margin: 20px 0 0 0; width: 80%;}
 .whoop-common.whoop-featured .featured-header-wrap .geodir-search-container {width: 100%;}
 .whoop-common.whoop-featured .featured-header-wrap {width: 80%;padding: 0;}

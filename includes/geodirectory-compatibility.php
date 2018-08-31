@@ -1,5 +1,5 @@
 <?php
-
+include_once 'Mobile_Detect.php';
 if( !function_exists( 'whoop_before_nav_fn' ) ) {
 
 	function whoop_before_nav_fn() {
@@ -106,3 +106,27 @@ if( !function_exists( 'whoop_footer_copyright_content' ) ) {
 }
 
 add_action( 'dt_footer_copyright', 'whoop_footer_copyright_content', 10 );
+
+add_filter('wp_nav_menu_items','wp_nav_menu_fn',10,1);
+
+function wp_nav_menu_fn( $nav_menu ) {
+
+    $detect = new Mobile_Detect;
+
+    $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+
+    if( !empty( $deviceType ) && 'computer' !== $deviceType && !is_user_logged_in() && get_option( 'users_can_register' )) {
+
+        $login_url = apply_filters('whoop_login_url', wp_login_url());
+        $login_text = apply_filters('whoop_login_text', __('Log in', 'whoop'));
+
+        $sign_up_url = apply_filters('whoop_register_url', wp_login_url() . '?action=register');
+        $sign_up_text = apply_filters('whoop_register_text', __('Sign up', 'whoop'));
+
+        $nav_menu .= '<li class="nav-login"><a href="' . $login_url . '">' . $login_text . '</a></li>';
+        $nav_menu .= '<li class="nav-signup"><a href="' . $sign_up_url . '">' . $sign_up_text . '</a></li>';
+    }
+
+    return $nav_menu;
+
+}

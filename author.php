@@ -37,35 +37,37 @@ if( !is_user_logged_in() && !get_option( 'users_can_register' ) ){
 		?>
 
 		<?php do_action( 'whoop_before_author_content'); ?>
-		<div class="author-Profile-picture">
-			<?php echo $profile_pic; ?>
-		</div>
-		<div class="author-Profile-info">
-			<h4 class="author-title"><?php echo esc_attr($author_name); ?></h4>
-			<p class="author-email"><?php echo !empty( $user_data->user_email ) ? esc_attr($user_data->user_email) :''; ?></p>
-			<div class="gd-author-listing">
-				<ul>
-					<?php do_action( 'whoop_before_author_listing_links'); ?>
-					<?php if( !empty( $user_listing ) && is_array( $user_listing)) {
+        <div class="profile-wrap">
+            <div class="author-Profile-picture">
+                <?php echo $profile_pic; ?>
+            </div>
+            <div class="author-Profile-info">
+                <h4 class="author-title"><?php echo esc_attr($author_name); ?></h4>
+                <p class="author-email"><?php echo !empty( $user_data->user_email ) ? esc_attr($user_data->user_email) :''; ?></p>
+                <div class="gd-author-listing">
+                    <ul>
+                        <?php do_action( 'whoop_before_author_listing_links'); ?>
+                        <?php if( !empty( $user_listing ) && is_array( $user_listing)) {
 
-						foreach ( $user_listing as $list_key => $list_values ) {
+                            foreach ( $user_listing as $list_key => $list_values ) {
 
-							$temp_post_arr = !empty( $get_gd_posttype ) ? $get_gd_posttype[$list_key] :'';
-							?>
-							<li>
-								<a href="<?php echo $user_link.'?gd_dashboard=true&style='.$list_key ?>"><p class="listing-count"><?php echo $list_values; ?></p><?php if( 'gd_place' === $list_key) { ?><span class="list-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span><?php } ?> <?php echo $temp_post_arr['labels']['name'] ; ?></a>
-							</li>
-							<?php
-						}
+                                $temp_post_arr = !empty( $get_gd_posttype ) ? $get_gd_posttype[$list_key] :'';
+                                ?>
+                                <li>
+                                    <a href="<?php echo $user_link.'?gd_dashboard=true&style='.$list_key ?>"><p class="listing-count"><?php echo $list_values; ?></p><?php if( 'gd_place' === $list_key) { ?><span class="list-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span><?php } ?> <?php echo $temp_post_arr['labels']['name'] ; ?></a>
+                                </li>
+                                <?php
+                            }
 
-					} ?>
-					<li><a href="<?php echo $user_link.'?gd_dashboard=true&style=reviews'; ?>"><p class="Review-count"><?php echo $reviews_count; ?></p><span class="list-icon"><i class="fa fa-star"></i></span> Reviews</a></li>
-					<li><a href="<?php echo $user_link.'?gd_dashboard=true&style=favourite'; ?>"><p class="favorites-count"><?php echo $fav_list_count; ?></p><span class="list-icon"><i class="fa fa-bookmark"></i></span> Favourites</a></li>
-					<?php do_action( 'whoop_after_author_listing_links'); ?>
-				</ul>
-			</div>
-			<p class="author-bio"><?php echo !empty( $user_data->description ) ? esc_attr($user_data->description) :''; ?></p>
-		</div>
+                        } ?>
+                        <li><a href="<?php echo $user_link.'?gd_dashboard=true&style=reviews'; ?>"><p class="Review-count"><?php echo $reviews_count; ?></p><span class="list-icon"><i class="fa fa-star"></i></span> Reviews</a></li>
+                        <li><a href="<?php echo $user_link.'?gd_dashboard=true&style=favourite'; ?>"><p class="favorites-count"><?php echo $fav_list_count; ?></p><span class="list-icon"><i class="fa fa-bookmark"></i></span> Favourites</a></li>
+                        <?php do_action( 'whoop_after_author_listing_links'); ?>
+                    </ul>
+                </div>
+                <p class="author-bio"><?php echo !empty( $user_data->description ) ? esc_attr($user_data->description) :''; ?></p>
+            </div>
+        </div>
 		<?php
 		if( !empty( $_GET['gd_dashboard'] ) && 'true' === $_GET['gd_dashboard'] ) {
 			?>
