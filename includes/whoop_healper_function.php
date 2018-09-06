@@ -60,6 +60,8 @@ function whoop_current_user_account() {
 
 	}
 
+    $user_role = !empty( $current_user_data->roles ) ? $current_user_data->roles :'';
+
 	?>
 	<div id="whoop_user_account_panel" class="account-panel">
 		<div class="inner-account-panel">
@@ -67,6 +69,7 @@ function whoop_current_user_account() {
 				<a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo $avatar; ?></a>
 			</div>
 			<h4><a href="<?php echo esc_url($user_link); ?>" rel="nofollow"><?php echo esc_attr($author_name); ?></a></h4>
+            <h5 class="user-role">( <?php echo __( $user_role[0],'whoop' );?> )</h5>
 			<div class="user-counts">
 				<p class="user-review-count"><span class="list-icon"><i class="fa fa-star"></i></span> <?php echo get_user_review_count( $current_user->ID ); ?></p>
 				<p class="user-fav-count"><span class="list-icon"><i class="fa fa-bookmark"></i></span> <?php echo whoop_user_favourite($current_user->ID,'count'); ?></p>
@@ -81,7 +84,10 @@ function whoop_current_user_account() {
 					</li>
 				</ul>
 			<?php } ?>
-			<ul class="menu">
+			<ul class="menu nav-menu">
+                <li class="user-dashboard">
+                    <a href="<?php echo get_dashboard_url(); ?>"><span class="list-icon"><i class="fa fa-dashboard"></i></span><?php echo __( 'Dashboard','whoop' ); ?></a>
+                </li>
 				<li class="nav-logout">
 					<a href="<?php echo apply_filters('gd_sd_child_logout_url',wp_logout_url(site_url())); ?>"><span class="list-icon"><i class="fa fa-sign-out"></i></span> <?php echo apply_filters('gd_sd_child_logout_text', __('Log Out','whoop'));  ?></a>
 				</li>
@@ -379,7 +385,7 @@ function whoop_user_favourite($user_id, $response = 'html'){
 
 	}
 
-	$fav_listing_arr = array_slice($get_fav_listing, $offset, $length, true);
+	$fav_listing_arr = !empty( $get_fav_listing ) ? array_slice($get_fav_listing, $offset, $length, true) : array();
 
 
 	if( 'html' === $response ) {

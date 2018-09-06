@@ -228,3 +228,6 @@ ul {list-style: none;}
 .whoop-common.whoop-logged-user .whoop-author-content .author-Profile-picture img {width: 100%;height: auto;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-reviews ul li div {text-align: left;}
 .whoop-common.whoop-featured .featured-header-wrap .geodir-search-container form .geodir-loc-bar .gd-search-input-wrapper  select {height: 45px !important;font-size: 18px !important;font-weight: bold;text-transform: capitalize;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu.nav-menu li {display: block;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu.nav-menu li a span {margin-right: 5px;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel h5.user-role {text-align: center;margin: 10px 0;font-size: 12px;text-transform: capitalize;color: #000000c9;font-weight: bold;}

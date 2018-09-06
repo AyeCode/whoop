@@ -130,3 +130,18 @@ function wp_nav_menu_fn( $nav_menu ) {
     return $nav_menu;
 
 }
+
+add_filter('login_redirect','whoop_login_redirect_fn',10,3);
+
+/**
+ * @param $redirect_to
+ * @param $request
+ * @param $user
+ * @return string|void
+ */
+function whoop_login_redirect_fn( $redirect_to, $request, $user) {
+
+    $redirect_to = site_url();
+
+    return $redirect_to;
+}

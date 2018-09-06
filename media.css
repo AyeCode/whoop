@@ -1,5 +1,5 @@
 @media screen and (min-width: 1366px) {
-.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container {width: 80%;}
+.whoop-common.whoop-featured .featured-header-wrap .geodir-search-container {width: 100%;}
 }
 
 @media screen and (max-width: 1200px) and (min-width: 992px) {
