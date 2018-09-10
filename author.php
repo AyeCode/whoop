@@ -52,9 +52,11 @@ if( !is_user_logged_in() && !get_option( 'users_can_register' ) ){
                             foreach ( $user_listing as $list_key => $list_values ) {
 
                                 $temp_post_arr = !empty( $get_gd_posttype ) ? $get_gd_posttype[$list_key] :'';
+                                $get_menu_icon = get_post_menu_icon( $list_key );
+
                                 ?>
                                 <li>
-                                    <a href="<?php echo $user_link.'?gd_dashboard=true&style='.$list_key ?>"><p class="listing-count"><?php echo $list_values; ?></p><?php if( 'gd_place' === $list_key) { ?><span class="list-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span><?php } ?> <?php echo $temp_post_arr['labels']['name'] ; ?></a>
+                                    <a href="<?php echo $user_link.'?gd_dashboard=true&style='.$list_key ?>"><p class="listing-count"><?php echo $list_values; ?></p><span class="list-icon"><i class="<?php echo $get_menu_icon; ?>"></i></span> <?php echo $temp_post_arr['labels']['name'] ; ?></a>
                                 </li>
                                 <?php
                             }

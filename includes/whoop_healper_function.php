@@ -132,7 +132,7 @@ if( !function_exists( 'gd_popular_categories_fn' ) ) {
 					foreach ( $gd_place_terms as $term_key => $term_value ) {
 
 						if( $term_value->count > 0 ) {
-							$cat_icon = geodir_get_term_icon( $term_value->term_id );
+							$cat_icon = geodir_get_term_icon( $term_value->term_id ,true);
 
 							?>
 							<li>
@@ -306,9 +306,13 @@ function whoop_user_listing( $user_id ) {
 
 						$custom_fields = GeoDir_Settings_Cpt_Cf::get_cpt_custom_fields( $posttyps );
 
-						$get_bz_cf = get_business_hours_cf($custom_fields);
+                        $business_hours ='';
+                        $get_bz_cf = get_business_hours_cf($custom_fields);
 
-						$business_hours = geodir_cf_business_hours( '','',$get_bz_cf,$listing_value->ID,'' );
+						if( !empty( $get_bz_cf ) && '' != $get_bz_cf) {
+                            $business_hours = geodir_cf_business_hours( '','',$get_bz_cf,$listing_value->ID,'' );
+                        }
+
 
 						?>
 						<li id="post-<?php echo $listing_value->ID; ?>" <?php post_class('',$listing_value->ID); ?> >
@@ -372,21 +376,18 @@ function whoop_user_favourite($user_id, $response = 'html'){
 	}
 
 	$get_fav_listing = get_user_meta( $user_id,'gd_user_favourite_post'.$site_id,true);
+    $get_fav_listing = !empty( $get_fav_listing ) ? array_reverse($get_fav_listing) : array();
 
 	$get_page = !empty( $_GET['page'] ) ? (int)$_GET['page'] : 0;
 
 	$offset = 0;
-
 	$length = WHOOP_LISTING_PER_PAGE;
 
 	if( !empty( $get_page ) && $get_page > 1 ) {
-
 		$offset = $length * ( $get_page-1 );
-
 	}
 
 	$fav_listing_arr = !empty( $get_fav_listing ) ? array_slice($get_fav_listing, $offset, $length, true) : array();
-
 
 	if( 'html' === $response ) {
 
@@ -496,4 +497,19 @@ function whoop_listing_pagination( $total_record ) {
 		<?php
 	}
 
+}
+
+function get_post_menu_icon( $posttype ) {
+
+    $menu_icon = '';
+
+    $single_template = geodir_get_option('post_types');
+
+    $post_arr = !empty( $single_template[$posttype] )? $single_template[$posttype] : array();
+
+    $menu_icon = !empty( $post_arr['menu_icon'] ) ? $post_arr['menu_icon'] :'';
+
+    $menu_icon = 'dashicons-before '.$menu_icon;
+
+    return $menu_icon;
 }

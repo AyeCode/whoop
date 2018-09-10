@@ -145,3 +145,36 @@ function whoop_login_redirect_fn( $redirect_to, $request, $user) {
 
     return $redirect_to;
 }
+
+add_action('wp_ajax_get_categories_html','get_categories_html_fn');
+add_action('wp_ajax_nopriv_get_categories_html','get_categories_html_fn');
+
+function get_categories_html_fn() {
+
+    $post_type = !empty( $_POST['post_type'] ) ? $_POST['post_type'] :'gd_place';
+
+    $taxonomy = $post_type.'category';
+
+    $get_post_terms = get_terms( array(
+        'taxonomy' => $taxonomy,
+        'hide_empty' => false,
+    ) );
+
+    if( !empty( $get_post_terms ) && $get_post_terms !='' ) {
+
+        foreach ( $get_post_terms as $term_key => $term_value ) {
+
+            if( $term_value->count > 0 ) {
+                $cat_icon = geodir_get_term_icon($term_value->term_id,true);
+                ?>
+                <li>
+                    <a href="<?php echo esc_url( get_term_link( $term_value->term_id ) ); ?>"><img src="<?php echo $cat_icon; ?>" alt="<?php echo $term_value->slug; ?>"><?php echo __( $term_value->name, 'directory-starter-child' ) ?></a>
+                </li>
+                <?php
+            }
+
+        }
+    }
+
+    wp_die();
+}

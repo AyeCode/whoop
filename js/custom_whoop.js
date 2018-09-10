@@ -28,6 +28,26 @@
 
 		} ).change();
 
+        $(document).on('change','.whoop-common.whoop-featured select.search_by_post',function(){
+
+            var post_type = $(this).val();
+
+            $.ajax({
+                url : geodir_params.ajax_url,
+                type : 'post',
+                data : {
+                    action : 'get_categories_html',
+                    post_type : post_type
+                },
+                success : function( response ) {
+
+                    $('.popular-category ul.cat-menu').html('');
+                    $('.popular-category ul.cat-menu').html(response);
+                }
+            });
+
+        });
+
 	});
 
 })( jQuery );
