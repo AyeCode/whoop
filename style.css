@@ -77,7 +77,7 @@ ul {list-style: none;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li {display: inline-block;line-height: 30px;margin: 0 5px;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li a {color: #363636;text-transform: capitalize;font-size: 16px;padding: 0;}
 .whoop-common.whoop-common-header header#site-header {background: #d32323;box-shadow: 0 0;}
-.whoop-common.whoop-common-header header#site-header .ds-child-header-search {width: 80%;display: inline-block;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search {width: 88%;display: inline-block;}
 .whoop-common.whoop-common-header header#site-header .site-logo-wrap {width: 10%;float: left;margin-right: 15px;min-height: 50px;line-height: 35px;}
 .whoop-common.whoop-common-header header#site-header .whoop-common-page-menu {background: #fafafa;margin-top: 10px;border-bottom: 1px solid #e8e8e8;}
 .whoop-common.whoop-common-header header#site-header .ds-child-header-search .geodir-search-container {width: 70%;float: left;margin: 0;padding: 0;}
@@ -140,11 +140,11 @@ ul {list-style: none;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right {width: 65%;float: left;margin-left:20px; }
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-title {font-size: 18px;padding-bottom: 10px;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .review-html {padding: 10px 0;position: absolute;top: 10px;right: 0;}
-.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .review-count {font-size: 16px;color: #bd1f1f;padding-bottom: 5px;text-transform: capitalize;margin: 5px 0;}
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .review-count {font-size: 16px;color: #333333;padding-bottom: 5px;text-transform: capitalize;margin: 5px 0;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-title a {color: #bd1f1f;font-weight: bold;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-content {font-size: 16px;text-transform: capitalize;padding: 5px 0;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-date {font-size: 16px;padding: 5px 0;color: #bd1f1f; position: absolute;top: 40px;right: 0;}
-.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-categories a {font-size: 16px;color: #bd1f1f;}
+.whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-categories a {font-size: 16px;color: #333333;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-categories a:hover {color: #d32323;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-status {font-size: 16px;padding: 5px 0;color: #bd1f1f;text-transform: capitalize;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-listing .geodir-loop-container ul.geodir-category-list-view.list-view li .whoop-post-right .post-status span {color: #757575;margin: 0 5px;font-weight: bold;}
@@ -231,3 +231,23 @@ ul {list-style: none;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu.nav-menu li {display: block;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu.nav-menu li a span {margin-right: 5px;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel h5.user-role {text-align: center;margin: 10px 0;font-size: 12px;text-transform: capitalize;color: #000000c9;font-weight: bold;}
+.whoop-common.whoop-common-header .geodir-tabs .geodir-tab-active a {color: #E84739 !important;}
+.whoop-common.whoop-common-header .event-date-time span.event-cal-icon {display: inline-block;margin-right: 5px;color: #333333;}
+.whoop-common.whoop-common-header .event-date-time .geodir-schedules {display: inline-block;vertical-align: middle;}
+.whoop-common.whoop-common-header .event-date-time .geodir-schedules .geodir-schedule .geodir-schedule-start,.whoop-common.whoop-common-header .event-date-time .geodir-schedules .geodir-schedule .geodir-schedule-end {font-size: 14px;color: #333333;}
+.whoop-common.whoop-common-header  .select-wrap {height: 50px;line-height: 50px;border: 1px solid #CCC;border-radius: 5px;}
+.whoop-common.whoop-common-header .subnav-search {width: 50%;float: left;}
+.whoop-common.whoop-common-header .subnav-search .dir-search {width: 85%;}
+.whoop-common.whoop-common-header .subnav-search .dir-search form {width: 100%;float: left;border: 0px;}
+.whoop-common.whoop-common-header .subnav-search .dir-search form:hover {border: 0px !important;box-shadow: 0 0 0;}
+.whoop-common.whoop-common-header .subnav-search .dir-search form input {width: 75% !important;float: left !important;}
+.whoop-common.whoop-common-header .subnav-search .dir-search form button.nouveau-search-submit {width: auto;float: left;height: 45px !important;line-height: 45px !important;}
+.whoop-common.whoop-common-header .item-body {box-shadow: 0 5px 12px #CCC;padding: 10px;}
+.whoop-common.whoop-common-header .buddypress-wrap div#item-header {border: 1px solid #CCCC;border-radius: 5px;box-shadow: 0 5px 10px #CCC;}
+.whoop-common.whoop-common-header .member-front-page {width: 100%;float: left;}
+.whoop-common.whoop-common-header .member-front-page .bp-feedback {margin: 0px;padding: 10px;}
+.whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip {background: transparent !important;border: 0px !important;color: #d32323 !important;width: 25px;}
+.whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip span:before {font-size: 22px;}
+.whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:focus:after,
+.whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:hover:after,
+.whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:active:after{display:none;}

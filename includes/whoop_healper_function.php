@@ -313,6 +313,7 @@ function whoop_user_listing( $user_id ) {
                             $business_hours = geodir_cf_business_hours( '','',$get_bz_cf,$listing_value->ID,'' );
                         }
 
+                        $event_date_time = get_event_date( $listing_value->ID );
 
 						?>
 						<li id="post-<?php echo $listing_value->ID; ?>" <?php post_class('',$listing_value->ID); ?> >
@@ -326,6 +327,7 @@ function whoop_user_listing( $user_id ) {
 								<div class="review-count"><?php echo ( $get_review_count > 0 ) ? $get_review_count.' reviews' : 'No reviews'; ?></div>
 								<div class="post-favorite-list"><span class="gd-list-favorite"><?php geodir_favourite_html( '', $listing_value->ID ); ?></span></div>
 								<div class="post-business-hour"><?php echo $business_hours; ?></div>
+								<div class="event-date-time"><?php echo !empty( $event_date_time ) ? '<span class="event-cal-icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>'.$event_date_time :''; ?></div>
 								<div class="post-date"><?php echo $post_date_time.' ago'; ?></div>
 								<div class="post-status"><i class="fa fa-play"></i> <span>Status: </span> <?php echo $listing_value->post_status; ?></div>
 								<div class="post-content"><?php echo strip_tags($post_content); ?></div>
@@ -512,4 +514,18 @@ function get_post_menu_icon( $posttype ) {
     $menu_icon = 'dashicons-before '.$menu_icon;
 
     return $menu_icon;
+}
+
+function get_event_date( $event_id ) {
+
+    $schedule = array();
+
+    if ( ( $schedules = GeoDir_Event_Schedules::get_schedules( $event_id, 'upcoming', 1 ) ) ) {
+        $schedule		= $schedules[0];
+    } elseif ( ( $schedules = GeoDir_Event_Schedules::get_schedules( $event_id, '', 1 ) ) ) {
+        $schedule		= $schedules[0];
+    }
+
+    return GeoDir_Event_Schedules::get_schedules_html( array( (object)$schedule ), false );
+
 }

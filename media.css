@@ -31,6 +31,7 @@
 .whoop-common .whoop-author-content .author-listing .whoop-user-reviews ul,.whoop-common .whoop-author-content .author-listing .whoop-user-favourite ul {width: 100%;}
 .whoop-common nav#mm-primary-nav ul li a.mm-subopen {width: 20%;border: 0px;}
 .whoop-common nav#mm-primary-nav ul li a.mm-subopen:before {border-width: 0px;}
+.whoop-common.whoop-common-header header#site-header .ds-child-header-search {width: 86%;}
 }
 
 @media screen and (max-width: 720px) {
@@ -82,7 +83,7 @@ body .geodir-listing-search.gd-search-bar-style .geodir-loc-bar .clearfix.geodir
 .whoop-common .whoop-author-content .author-listing .whoop-user-favourite ul li div {text-align: center !important;display: block;margin: 10px 0;}
 .whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul {width: 50%;display: block;margin: 0 auto;}
 .whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul li {display: block;width: 100%;border: 0;padding: 0;margin: 10px 0;}
-.whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul li a {background: #00000042;display: block;padding: 10px;}
+.whoop-common .whoop-author-content .author-Profile-info .gd-author-listing ul li a {background: #FFF;display: block;padding: 10px;border-radius: 5px;border: 1px solid #CCC;box-shadow: 0 0 19px #CCC;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-favourite ul li .post-title a{width: 80%}
 .whoop-common .whoop-author-content .author-listing .whoop-user-reviews ul li div {width: 100%;position: relative;right: auto;left: auto;text-align: center;margin: 10px 0;}
 .whoop-common .whoop-author-content .author-listing .whoop-user-reviews ul li .user-pic img {width: 30% !important;height: auto !important;}
