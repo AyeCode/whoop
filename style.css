@@ -283,3 +283,4 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header .activity ul.activity-list li.activity-item .activity-content .activity-inner {background: transparent;padding: 10px 0;}
 .whoop-common.whoop-common-header .activity ul.activity-list li.activity-item .activity-content .activity-meta {background: transparent;padding: 0;margin-top: 10px !important;}
 .whoop-common.whoop-common-header ul li .geodir-output-location .fb-video {width: 50%;display: inline-block;height: auto;}
+.whoop-common .whoop-user-reviews ul li .user-pic a.post-image img,.whoop-common .whoop-user-favourite ul li .post-thumb a.post-image img {width: 50px;height: 50px;}

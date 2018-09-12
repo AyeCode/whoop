@@ -169,15 +169,7 @@ function whoop_user_review( $user_id ) {
 			if( !empty( $review_results ) && count( $review_results ) > 0 ) {
 
 				foreach ( $review_results as $review_key => $review_value ) {
-
-					$post_thumbnail = get_the_post_thumbnail($review_value->post_id,array(50,50));
-
-					$post_class ='post-image';
-					if( empty( $post_thumbnail ) ) {
-						$post_thumbnail = '<img style="width:50px;height:50px;" src="'.WHOOP_PLACEHOLDER_IMAGE.'" >';
-						$post_class ='post-placeholder-img';
-					}
-
+				    
 					$comment_id = $review_value->comment_id;
 					$get_comment = get_comment( $comment_id );
 
@@ -195,6 +187,20 @@ function whoop_user_review( $user_id ) {
 						$review_content = substr($get_comment->comment_content, 0, 150).'...';
 
 					}
+
+                    $post_images = geodir_get_images($review_value->post_id, 1,true);
+
+                    $post_thumbnail ='';
+
+                    foreach($post_images as $image) {
+                        $post_thumbnail = geodir_get_image_tag($image,'small');
+                    }
+
+                    $post_class ='post-image';
+                    if( empty( $post_thumbnail ) ) {
+                        $post_thumbnail = '<img style="width:50px;height:50px;" src="'.WHOOP_PLACEHOLDER_IMAGE.'" >';
+                        $post_class ='post-placeholder-img';
+                    }
 
 					?>
 					<li class="<?php echo ( $review_key % 2 == 0 ) ? 'even' : 'odd'; ?>">
