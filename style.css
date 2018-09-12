@@ -73,7 +73,7 @@ ul {list-style: none;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel h4 a {color: #000000c9;text-transform: capitalize;font-size: 18px;padding: 0;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel .user-counts {font-size: 16px;color: #bd1f1f;font-weight: bold;float: left;width: 70%;text-align: center;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel .user-counts p {display: inline-block;margin: 5px;}
-.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu {float: left;margin: 5px 0 0 0;width: 100%;text-align: left;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu {float: left;margin: 5px 0 0 0;width: 100%;text-align: left;border-top: 1px dotted #333333;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li {display: inline-block;line-height: 30px;margin: 0 5px;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li a {color: #363636;text-transform: capitalize;font-size: 16px;padding: 0;}
 .whoop-common.whoop-common-header header#site-header {background: #d32323;box-shadow: 0 0;}
@@ -243,11 +243,43 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header .subnav-search .dir-search form input {width: 75% !important;float: left !important;}
 .whoop-common.whoop-common-header .subnav-search .dir-search form button.nouveau-search-submit {width: auto;float: left;height: 45px !important;line-height: 45px !important;}
 .whoop-common.whoop-common-header .item-body {box-shadow: 0 5px 12px #CCC;padding: 10px;}
-.whoop-common.whoop-common-header .buddypress-wrap div#item-header {border: 1px solid #CCCC;border-radius: 5px;box-shadow: 0 5px 10px #CCC;}
+.whoop-common.whoop-common-header .buddypress-wrap div#cover-image-container {border: 1px solid #CCCC;border-radius: 5px;box-shadow: 0 5px 10px #CCC;}
 .whoop-common.whoop-common-header .member-front-page {width: 100%;float: left;}
-.whoop-common.whoop-common-header .member-front-page .bp-feedback {margin: 0px;padding: 10px;}
+.whoop-common.whoop-common-header .member-front-page .bp-feedback {margin: 0px;padding: 10px;box-shadow: 0 0;}
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip {background: transparent !important;border: 0px !important;color: #d32323 !important;width: 25px;}
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip span:before {font-size: 22px;}
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:focus:after,
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:hover:after,
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:active:after{display:none;}
+.whoop-common.whoop-common-header .bp-wrap .info.bp-feedback {width: 100%;float: left;}
+.whoop-common.whoop-common-header div.activity-update-form {padding: 0;width: 100%;float: left;}
+.whoop-common.whoop-common-header div.activity-update-form form.activity-form {margin: 0 !important;}
+.whoop-common.whoop-common-header div.activity-update-form form.activity-form div#whats-new-avatar {width: 15%;float: left;padding: 10px;vertical-align: bottom;}
+.whoop-common.whoop-common-header div.activity-update-form form.activity-form div#whats-new-content {padding: 0px !important;margin: 0px !important;width: 80%;float: left;}
+.whoop-common.whoop-common-header div.activity-update-form form.activity-form div#whats-new-content textarea {margin: 10px 0;height: 50px !important;}
+.whoop-common.whoop-common-header div#subnav-filters {width: 100%;float: left;}
+.whoop-common.whoop-common-header .bp-wrap .info.bp-feedback span, .whoop-common.whoop-common-header .bp-wrap .info.bp-feedback p {padding: 10px;}
+.whoop-common.whoop-common-header .subnav-search .member-search {width: 80% !important;}
+.whoop-common.whoop-common-header .subnav-search .member-search form {width: 100% !important;border: 0px !important;}
+.whoop-common.whoop-common-header .subnav-search .member-search form input {width: 73%;float: left;margin: 0px !important;border: 1px solid #CCC !important;height: 30px !important;line-height: 30px !important;}
+.whoop-common.whoop-common-header .subnav-search .member-search form button {height: 45px !important;line-height: 45px !important;}
+.whoop-common.whoop-common-header form .select-wrap {width: 20%;display: inline-block;height: 40px;line-height: 40px;}
+.whoop-common.whoop-common-header form .select-wrap select {padding: 0 10px;}
+.whoop-common.whoop-common-header form.standard-form input.button {height: 40px !important;margin-left: 10px;}
+.whoop-common.whoop-common-header .bp-feedback span.bp-icon,.whoop-common.whoop-common-header .bp-feedback p {padding: 10px;}
+.whoop-common.whoop-common-header table.notification-settings tr td {padding: 10px 0;}
+.whoop-common.whoop-common-header table.notification-settings thead tr th {font-weight: bold;font-size: 16px;border-bottom: 1px solid #CCC;padding: 10px 0;}
+.whoop-common.whoop-common-header  form.standard-form {float: left;width: 100%;}
+.whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li.bp-personal-tab a:hover {background: transparent;border-bottom: 2px solid #d32323;color: #d32323;font-weight: bold;}
+.whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li.bp-personal-tab a {color: #333;padding: 10px;}
+.whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li.bp-personal-tab.current.selected a {color: #d32323;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body nav.bp-navs ul.subnav li.bp-personal-sub-tab a {color: #333;background: transparent;padding: 10px 20px;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body nav.bp-navs ul.subnav li.bp-personal-sub-tab a:hover {border-bottom: 2px solid #d32323;color: #d32323;font-weight: bold;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body nav.bp-navs ul.subnav li.bp-personal-sub-tab.current.selected a{color: #d32323}
+.whoop-common.whoop-common-header .activity ul.activity-list {width: auto;padding: 0px;background: transparent;border: 0px;box-shadow: 0 0;}
+.whoop-common.whoop-common-header .activity ul.activity-list li.activity-item .activity-avatar {width: 10%;margin: 0px;float: left;}
+.whoop-common.whoop-common-header .activity ul.activity-list li.activity-item .activity-content {width: 80%;float: left;}
+.whoop-common.whoop-common-header .activity ul.activity-list li.activity-item .activity-content .activity-header {color: red;}
+.whoop-common.whoop-common-header .activity ul.activity-list li.activity-item .activity-content .activity-inner {background: transparent;padding: 10px 0;}
+.whoop-common.whoop-common-header .activity ul.activity-list li.activity-item .activity-content .activity-meta {background: transparent;padding: 0;margin-top: 10px !important;}
+.whoop-common.whoop-common-header ul li .geodir-output-location .fb-video {width: 50%;display: inline-block;height: auto;}

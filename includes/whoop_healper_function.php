@@ -401,14 +401,6 @@ function whoop_user_favourite($user_id, $response = 'html'){
 
 				foreach ( $fav_listing_arr as $fav_key => $fav_list ) {
 
-					$post_thumbnail = get_the_post_thumbnail($fav_list,array(50,50));
-
-					$post_class ='post-image';
-					if( empty( $post_thumbnail ) ) {
-						$post_thumbnail = '<img style="width:50px;height:50px;" src="'.WHOOP_PLACEHOLDER_IMAGE.'" >';
-						$post_class ='post-placeholder-img';
-					}
-
 					$post_date = get_the_date('',$fav_list);
 					$post_date = mysql2date('U', $post_date, true);
 					$post_date_time = !empty( $post_date ) ? human_time_diff( $post_date) :'';
@@ -430,9 +422,23 @@ function whoop_user_favourite($user_id, $response = 'html'){
 					}
 					$categories = !empty( $temp_arr ) ? implode( ' | ', $temp_arr) :'';
 
-					?>
+
+                    $post_images = geodir_get_images($fav_list, 1,true);
+
+                    $post_thumbnail ='';
+
+                    foreach($post_images as $image) {
+                        $post_thumbnail = geodir_get_image_tag($image);
+                    }
+
+                    $post_class ='post-image';
+                    if( empty( $post_thumbnail ) ) {
+                        $post_thumbnail = '<img style="width:50px;height:50px;" src="'.WHOOP_PLACEHOLDER_IMAGE.'" >';
+                        $post_class ='post-placeholder-img';
+                    }
+                    ?>
 					<li class="<?php echo ( $fav_key % 2 == 0 ) ? 'even' :'odd'; ?>">
-						<div class="post-thumb"><a class="<?php echo $post_class; ?>" href="<?php echo get_the_permalink($fav_list); ?>"><?php echo $post_thumbnail; ?></a></div>
+						<div class="post-thumb"><?php ?><a class="<?php echo $post_class; ?>" href="<?php echo get_the_permalink($fav_list); ?>"><?php echo $post_thumbnail; ?></a></div>
 						<div class="post-title"><a href="<?php echo get_the_permalink($fav_list); ?>"><?php echo get_the_title($fav_list); ?></a></div>
 						<div class="post-category"><i class="fa fa-tags "></i> <?php echo $categories; ?></div>
 						<div class="post-time"><?php echo $post_date_time.' ago';; ?></div>
