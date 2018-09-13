@@ -73,8 +73,8 @@ ul {list-style: none;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel h4 a {color: #000000c9;text-transform: capitalize;font-size: 18px;padding: 0;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel .user-counts {font-size: 16px;color: #bd1f1f;font-weight: bold;float: left;width: 70%;text-align: center;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel .user-counts p {display: inline-block;margin: 5px;}
-.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu {float: left;margin: 5px 0 0 0;width: 100%;text-align: left;border-top: 1px dotted #333333;}
-.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li {display: inline-block;line-height: 30px;margin: 0 5px;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu {float: left;margin: 5px 0 0 0;width: 100%;text-align: left;}
+.whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li {display: block;line-height: 30px;margin: 0 5px;}
 .whoop-common header#site-header ul.menu li.nav-account .account-panel ul.menu li a {color: #363636;text-transform: capitalize;font-size: 16px;padding: 0;}
 .whoop-common.whoop-common-header header#site-header {background: #d32323;box-shadow: 0 0;}
 .whoop-common.whoop-common-header header#site-header .ds-child-header-search {width: 88%;display: inline-block;}
@@ -106,7 +106,7 @@ ul {list-style: none;}
 .whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li a {position: relative;vertical-align: middle;margin: 0 10px;color: #FFF;font-size: 16px;font-weight: bold;text-transform: capitalize;background: #00000057;padding: 10px;border-radius: 5px;}
 .whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li {display: inline-block;vertical-align: middle;    padding: 10px 0;margin-bottom: 10px;}
 .whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu li a img {width: 15px;margin-right: 5px;vertical-align: top;height: 20px;}
-.whoop-common.whoop-common-header.whoop-logged-user header#site-header .ds-child-header-search .whoop-header-nav ul.menu.buddypress-menu {border-top: 1px dotted #b7b6b4;border-bottom: 1px dotted #b7b6b4;padding: 5px 0;}
+.whoop-common.whoop-logged-user .whoop-header-nav ul.menu.buddypress-menu {border-top: 1px dotted #b7b6b4;border-bottom: 1px dotted #b7b6b4;padding: 5px 0;}
 .whoop-common .whoop-author-content {padding: 25px 0;min-height: 500px;display: inline-block; width: 100%;}
 .whoop-common .whoop-author-content .author-Profile-picture {width: 20%;float: left;vertical-align: top; margin-right: 25px;}
 .whoop-common .whoop-author-content .author-Profile-picture img {border-radius: 15px;}
@@ -261,7 +261,7 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header .bp-wrap .info.bp-feedback span, .whoop-common.whoop-common-header .bp-wrap .info.bp-feedback p {padding: 10px;}
 .whoop-common.whoop-common-header .subnav-search .member-search {width: 80% !important;}
 .whoop-common.whoop-common-header .subnav-search .member-search form {width: 100% !important;border: 0px !important;}
-.whoop-common.whoop-common-header .subnav-search .member-search form input {width: 73%;float: left;margin: 0px !important;border: 1px solid #CCC !important;height: 30px !important;line-height: 30px !important;}
+.whoop-common.whoop-common-header .subnav-search .member-search form input {width: 68%;float: left;margin: 0px !important;border: 1px solid #CCC !important;height: 30px !important;line-height: 30px !important;}
 .whoop-common.whoop-common-header .subnav-search .member-search form button {height: 45px !important;line-height: 45px !important;}
 .whoop-common.whoop-common-header form .select-wrap {width: 20%;display: inline-block;height: 40px;line-height: 40px;}
 .whoop-common.whoop-common-header form .select-wrap select {padding: 0 10px;}
@@ -272,7 +272,8 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header  form.standard-form {float: left;width: 100%;}
 .whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li.bp-personal-tab a:hover {background: transparent;border-bottom: 2px solid #d32323;color: #d32323;font-weight: bold;}
 .whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li.bp-personal-tab a {color: #333;padding: 10px;}
-.whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li.bp-personal-tab.current.selected a {color: #d32323;}
+.whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li.bp-personal-tab.current.selected a {color: #333;border-left: 3px solid #d32323;background: #f5f5f5;}
+.whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li.bp-personal-tab.current.selected a:hover {border-bottom: 0;}
 .whoop-common.whoop-common-header .bp-wrap div.item-body nav.bp-navs ul.subnav li.bp-personal-sub-tab a {color: #333;background: transparent;padding: 10px 20px;}
 .whoop-common.whoop-common-header .bp-wrap div.item-body nav.bp-navs ul.subnav li.bp-personal-sub-tab a:hover {border-bottom: 2px solid #d32323;color: #d32323;font-weight: bold;}
 .whoop-common.whoop-common-header .bp-wrap div.item-body nav.bp-navs ul.subnav li.bp-personal-sub-tab.current.selected a{color: #d32323}
@@ -284,3 +285,18 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header .activity ul.activity-list li.activity-item .activity-content .activity-meta {background: transparent;padding: 0;margin-top: 10px !important;}
 .whoop-common.whoop-common-header ul li .geodir-output-location .fb-video {width: 50%;display: inline-block;height: auto;}
 .whoop-common .whoop-user-reviews ul li .user-pic a.post-image img,.whoop-common .whoop-user-favourite ul li .post-thumb a.post-image img {width: 50px;height: 50px;}
+.whoop-common.whoop-common-header .author-listing ul li p.error {font-size: 18px;color: #d32323;font-weight: bold;text-align: center;}
+.whoop-common .gd-search-field-cpt {position: relative;float: left;min-width: 200px;margin: 50px 33%;}
+.whoop-common .gd-search-field-cpt select::-ms-expand {display: none;}
+.whoop-common .gd-search-field-cpt:after {content: '>';font: 17px "Consolas", monospace;-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);right: 12px;top: 12px;padding: 0 0 2px;position: absolute;pointer-events: none;color: #5a5151;font-size: 18px;font-weight: bold;}
+.whoop-common .gd-search-field-cpt select {-webkit-appearance: none;-moz-appearance: none;appearance: none;display: block;width: 100%;max-width: 320px;height: 50px;float: right;margin: 5px 0px;padding: 0px 24px;font-size: 16px;line-height: 1.75;color: #757575;background-color: #ffffff;background-image: none;border: 1px solid #cccccc;-ms-word-break: normal;word-break: normal;cursor: pointer;}
+.whoop-common.whoop-common-header .bp-wrap nav.main-navs {width: 19%;float: left;margin-right: 10px;}
+.whoop-common.whoop-common-header .bp-wrap nav.main-navs ul {width: 100%;}
+.whoop-common.whoop-common-header .bp-wrap nav.main-navs ul li {width: 100%;display: block;border-bottom: 1px solid #e6e6e6;}
+.whoop-common.whoop-common-header .bp-wrap  div.item-body {width: 79%;float: right;margin: 0px;}
+.whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu {background: #bd1f1f !important;}
+.whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu nav.primary-nav ul li a {color: #FFF !important;}
+.whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu nav.primary-nav ul li a:hover {background: #a71c1c !important;}
+.whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu nav.primary-nav ul li  ul.sub-menu {background: red;}
+.whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu nav.primary-nav ul li ul.sub-menu li a:hover {background: #FFF !important;}
+.whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu nav.primary-nav ul li ul.sub-menu li a {color: #333 !important;}

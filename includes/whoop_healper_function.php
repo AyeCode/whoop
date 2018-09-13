@@ -79,6 +79,7 @@ function whoop_current_user_account() {
 					<li>
 						<a href="<?php echo esc_url($user_link); ?>"><i class="fa fa-user"></i> <?php echo __('About Me', 'whoop'); ?></a>
 					</li>
+                    <li><a href="<?php echo esc_url(site_url().'/members/'); ?>"><span class="list-icon"><i class="fa fa-users"></i></span> <?php echo __('Find Friends', 'whoop'); ?></a></li>
 					<li>
 						<a href="<?php echo esc_url($user_link.'settings/'); ?>"><i class="fa fa-cog"></i> <?php echo __('Account Settings', 'whoop'); ?></a>
 					</li>
@@ -169,7 +170,7 @@ function whoop_user_review( $user_id ) {
 			if( !empty( $review_results ) && count( $review_results ) > 0 ) {
 
 				foreach ( $review_results as $review_key => $review_value ) {
-				    
+
 					$comment_id = $review_value->comment_id;
 					$get_comment = get_comment( $comment_id );
 
@@ -215,7 +216,7 @@ function whoop_user_review( $user_id ) {
 
 			} else{
 				?>
-				<li><p class="error">No reviews found...</p></li>
+				<li><p class="error"><?php echo __('Not found reviews...','whoop'); ?></p></li>
 				<?php
 			}
 			?>
@@ -453,8 +454,9 @@ function whoop_user_favourite($user_id, $response = 'html'){
 					<?php
 				}
 
-			}
-			?>
+			}else{ ?>
+                <li><p class="error"><?php echo __('Not found favourite listings...','whoop');?></p></li>
+            <?php } ?>
 			</ul>
 		</div>
 		<?php
