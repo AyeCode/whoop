@@ -77,11 +77,11 @@ function whoop_current_user_account() {
 			<?php if (class_exists('BuddyPress')) { ?>
 				<ul class="menu buddypress-menu">
 					<li>
-						<a href="<?php echo esc_url($user_link); ?>"><i class="fa fa-user"></i> <?php echo __('About Me', 'whoop'); ?></a>
+						<a href="<?php echo esc_url($user_link); ?>"><span><i class="fa fa-user"></i></span> <?php echo __('About Me', 'whoop'); ?></a>
 					</li>
-                    <li><a href="<?php echo esc_url(site_url().'/members/'); ?>"><span class="list-icon"><i class="fa fa-users"></i></span> <?php echo __('Find Friends', 'whoop'); ?></a></li>
+                    <li><a href="<?php echo esc_url(site_url().'/members/'); ?>"><span><i class="fa fa-users"></i></span> <?php echo __('Find Friends', 'whoop'); ?></a></li>
 					<li>
-						<a href="<?php echo esc_url($user_link.'settings/'); ?>"><i class="fa fa-cog"></i> <?php echo __('Account Settings', 'whoop'); ?></a>
+						<a href="<?php echo esc_url($user_link.'settings/'); ?>"><span><i class="fa fa-cog"></i></span> <?php echo __('Account Settings', 'whoop'); ?></a>
 					</li>
 				</ul>
 			<?php } ?>

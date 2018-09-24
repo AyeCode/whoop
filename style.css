@@ -99,7 +99,7 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul {float: left;}
 .whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li {padding: 0;}
 .whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li a {height: 0px;line-height: 0px;color: #333333;display: block;padding:20px;font-size: 13px;font-weight: bold;text-transform: capitalize;}
-.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li.current-menu-item a,.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li a:hover {background: #FFFFFF;}
+.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li.current-menu-item a,.whoop-common.whoop-common-header .whoop-common-page-menu nav#primary-nav ul li a:hover {background: #a71c1c;}
 .whoop-common.whoop-featured .featured-header-wrap .geodir-search-container {width: 100%;margin: 0 auto;}
 .whoop-common.whoop-featured .featured-header-wrap .popular-category {width: 100%;display: block;}
 .whoop-common.whoop-featured .featured-header-wrap .popular-category ul.cat-menu {margin: 0;}
@@ -289,6 +289,7 @@ ul {list-style: none;}
 .whoop-common .gd-search-field-cpt {position: relative;float: left;min-width: 200px;margin: 50px 33%;}
 .whoop-common .gd-search-field-cpt select::-ms-expand {display: none;}
 .whoop-common .gd-search-field-cpt:after {content: '>';font: 17px "Consolas", monospace;-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-ms-transform: rotate(90deg);transform: rotate(90deg);right: 12px;top: 12px;padding: 0 0 2px;position: absolute;pointer-events: none;color: #5a5151;font-size: 18px;font-weight: bold;}
+.whoop-common.whoop-common-header .gd-search-field-cpt:after{top: 8px;}
 .whoop-common .gd-search-field-cpt select {-webkit-appearance: none;-moz-appearance: none;appearance: none;display: block;width: 100%;max-width: 320px;height: 50px;float: right;margin: 5px 0px;padding: 0px 24px;font-size: 16px;line-height: 1.75;color: #757575;background-color: #ffffff;background-image: none;border: 1px solid #cccccc;-ms-word-break: normal;word-break: normal;cursor: pointer;}
 .whoop-common.whoop-common-header .bp-wrap nav.main-navs {width: 19%;float: left;margin-right: 10px;}
 .whoop-common.whoop-common-header .bp-wrap nav.main-navs ul {width: 100%;}
@@ -300,3 +301,34 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu nav.primary-nav ul li  ul.sub-menu {background: red;}
 .whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu nav.primary-nav ul li ul.sub-menu li a:hover {background: #FFF !important;}
 .whoop-common.whoop-common-header.whoop-logged-user .whoop-common-page-menu nav.primary-nav ul li ul.sub-menu li a {color: #333 !important;}
+.whoop-common.whoop-common-header table.notifications tr {border-bottom: 1px solid #CCC;}
+.whoop-common.whoop-common-header div#group-create-body li.current {background: #bd1f1f;color: #FFF;}
+.whoop-common.whoop-common-header div#group-create-body li.current a {color: #FFF;}
+.whoop-common.whoop-common-header div#group-create-body li a:hover {background: transparent;}
+.whoop-common.whoop-common-header .group-invites-column .group-subnav-filters {width: 100%;}
+.whoop-common.whoop-common-header .group-invites-column .group-subnav-filters .subnav-search .bp-search {width: 100%;float: left;}
+.whoop-common.whoop-common-header .group-invites-column .group-subnav-filters .subnav-search .bp-search form {border: 0;width: 100%;}
+.whoop-common.whoop-common-header .group-invites-column .group-subnav-filters .subnav-search .bp-search form input {width: 80% !important;}
+.whoop-common.whoop-common-header .group-invites-column .group-subnav-filters .subnav-search .bp-search form button {height: 45px !important;line-height: 50px !important;}
+.whoop-common.whoop-common-header .group-invites-column .members ul.item-list {width: 100%;margin: 0;padding: 5px 0;}
+.whoop-common.whoop-common-header .group-invites-column .members ul.item-list li {width: 100%;float: left;margin: 0;padding: 5px;border-bottom: 1px solid #CCC !important;margin: 5px 0;border: 0px;}
+.whoop-common.whoop-common-header .group-invites-column .members ul.item-list li .item-avatar {width: 10%;margin: 0;float: left;}
+.whoop-common.whoop-common-header .group-invites-column .members ul.item-list li .item {width: 80%;margin: 0;float: left;}
+.whoop-common.whoop-common-header .group-invites-column .members ul.item-list li .action {top: 20px;}
+.whoop-common.whoop-common-header .group-invites-column .members ul.item-list li .action button.button {background: transparent !important;color: #bd1f1f !important;border: 0px !important;padding: 0 !important;}
+.whoop-common.whoop-common-header div#group-create-body ul.subnav li.current a {background: #bd1f1f;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container {width: 100%;float: left;margin: 0px;padding: 0px;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container nav#subnav {border: 0px;box-shadow: none;border-right: 1px solid #CCC;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container .group-invites-column {padding: 10px;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container .subnav-filters {margin: 0px;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container .group-invites-column .group-invites-search {width: 100%;border: 1px solid #CCC;border-radius: 0 5px 5px 0;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container nav#subnav ul.subnav {width: 100%;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container nav#subnav ul.subnav li {border-bottom: 1px solid #CCC;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container nav#subnav ul.subnav li.current a {background: #f5f5f5;border-left: 3px solid #bd1f1f;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body div#group-invites-container nav#subnav ul.subnav li a:hover {background: transparent;color: #bd1f1f;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body .bp-search {width: 50%;float: left;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body .bp-search form {width: 100%;border: 0px;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body .bp-search form input {width: 70%;border: 1px solid #CCC;margin: 0px;}
+.whoop-common.whoop-common-header .bp-wrap div.item-body .bp-search form button {height: 40px !important;line-height: 40px !important;}
+.whoop-common.whoop-common-header .bp-wrap li.group-act-search {width: 100%;}
+.whoop-common.whoop-common-header .bp-wrap li.group-act-search .bp-search {width: 100%;}
