@@ -332,3 +332,4 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header .bp-wrap div.item-body .bp-search form button {height: 40px !important;line-height: 40px !important;}
 .whoop-common.whoop-common-header .bp-wrap li.group-act-search {width: 100%;}
 .whoop-common.whoop-common-header .bp-wrap li.group-act-search .bp-search {width: 100%;}
+.whoop-common.whoop-common-header.whoop-not-logged-user .whoop-common-page-menu nav#primary-nav ul li.current-menu-item a, .whoop-common.whoop-common-header.whoop-not-logged-user .whoop-common-page-menu nav#primary-nav ul li a:hover {background: #FFF;}
