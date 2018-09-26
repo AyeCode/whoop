@@ -246,12 +246,12 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header .buddypress-wrap div#cover-image-container {border: 1px solid #CCCC;border-radius: 5px;box-shadow: 0 5px 10px #CCC;}
 .whoop-common.whoop-common-header .member-front-page {width: 100%;float: left;}
 .whoop-common.whoop-common-header .member-front-page .bp-feedback {margin: 0px;padding: 10px;box-shadow: 0 0;}
-.whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip {background: transparent !important;border: 0px !important;color: #d32323 !important;width: 25px;}
+.whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip {background: transparent !important;border: 0px !important;color: #d32323 !important; width: auto !important;position: absolute;top: -14px;right: 0;}
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip span:before {font-size: 22px;}
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:focus:after,
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:hover:after,
 .whoop-common.whoop-common-header .member-front-page .bp-feedback button.bp-tooltip:active:after{display:none;}
-.whoop-common.whoop-common-header .bp-wrap .info.bp-feedback {width: 100%;float: left;}
+.whoop-common.whoop-common-header .bp-wrap .info.bp-feedback {width: 100%;float: left;position: relative;}
 .whoop-common.whoop-common-header div.activity-update-form {padding: 0;width: 100%;float: left;}
 .whoop-common.whoop-common-header div.activity-update-form form.activity-form {margin: 0 !important;}
 .whoop-common.whoop-common-header div.activity-update-form form.activity-form div#whats-new-avatar {width: 15%;float: left;padding: 10px;vertical-align: bottom;}
@@ -333,3 +333,61 @@ ul {list-style: none;}
 .whoop-common.whoop-common-header .bp-wrap li.group-act-search {width: 100%;}
 .whoop-common.whoop-common-header .bp-wrap li.group-act-search .bp-search {width: 100%;}
 .whoop-common.whoop-common-header.whoop-not-logged-user .whoop-common-page-menu nav#primary-nav ul li.current-menu-item a, .whoop-common.whoop-common-header.whoop-not-logged-user .whoop-common-page-menu nav#primary-nav ul li a:hover {background: #FFF;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main {width: 100%;float: left;margin: 10px 0;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile {width: 97%;margin: 0px 0 10px 0;padding: 10px;border: 1px solid #CCC;box-shadow: 0 0 10px #CCC;border-radius: 5px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main  .uwp-profile-content {width: 97%;margin: 0;padding: 10px;border: 1px solid #CCC;box-shadow: 0 0 10px #CCC;border-radius: 5px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-edit-account {margin: 0 10px 0 0px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-users-list {width: 97%;float: left;padding: 10px;border: 1px solid #CCC;border-radius: 5px;box-shadow: 0 0 10px #CCC;}
+.whoop-common.whoop-common-header .uwp_page .uwp-users-list .uwp-users-list-sort-search {border-bottom: 1px solid #CCC;padding-bottom: 10px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-users-list ul.uwp_listview {width: 100%;float: left;}
+.whoop-common.whoop-common-header .uwp_page .uwp-users-list ul.uwp_listview li .uwp-users-list-user-left {width: 15%;float: left;margin-right: 10px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-users-list ul.uwp_listview li .uwp-users-list-user-right {width: 80%;float: left;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-nav {border-bottom: 1px solid #CCC;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-nav ul.item-list-tabs-ul li {margin: 10px;padding: 0px 0px 10px 0px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-nav ul.item-list-tabs-ul li span {font-size: 14px;display: inline-block;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-nav ul.item-list-tabs-ul li span:first-child {text-transform: capitalize;margin-right: 5px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-nav ul.item-list-tabs-ul li span:last-child {background: #eaeaea;padding: 5px;border-radius: 50%;line-height: 10px;color: #333;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-nav ul.item-list-tabs-ul li.active {cursor: pointer;border-bottom: 3px solid #bd1f1f;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-nav ul.item-list-tabs-ul li.active a {color: #bd1f1f;font-weight: bold;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content  .uwp-profile-entries h3 {text-align: center;font-size: 20px;font-weight: bold;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-entries .uwp-profile-item-block h3 {text-align: left;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-entries .uwp-profile-item-block p {text-align: center;}
+.whoop-common .site-footer .footer-widgets div.widget_text {width: 100%;float: left;}
+.whoop-common .site-footer .footer-widgets div.widget_text select {width: 100%;background: transparent;border: 1px solid #cfcfcf;color: #0073bb;cursor: pointer;height: 50px;line-height: 50px;}
+.whoop-common.whoop-common-header  div#whats-new-post-in-box {width: 85%;float: right;margin: 0 !important;}
+.whoop-common.whoop-common-header  div#whats-new-submit {width: 85%;float: right;margin: 10px 0px;}
+.whoop-common.whoop-common-header div#whats-new-post-in-box ul {width: 97%;float: left;}
+.whoop-common.whoop-common-header div#message {width: 82%;float: right;margin-right: 20px;}
+.whoop-common.whoop-common-header div#message span.bp-icon {padding: 5px;}
+.whoop-common.whoop-common-header div#message p {padding: 5px !important;margin: 0px !important;background: transparent !important;border: 0px !important;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-subcontent .uwp-profile-subnav {border-bottom: 1px solid #CCC;text-align: center;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-subcontent .uwp-profile-subnav ul {width: auto;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-subcontent .uwp-profile-subnav ul li {margin: 0px;padding: 10px;border: 0px;cursor: pointer;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-subcontent .uwp-profile-subnav ul li.active {border-bottom: 2px solid #bd1f1f;padding-bottom: 15px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-subcontent .uwp-profile-subnav ul li a span {text-transform: capitalize;font-size: 14px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-subcontent .uwp-profile-subnav ul li.active a span {font-weight: bold;color: #bd1f1f;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-subcontent .uwp-profile-subnav ul li a span.uwp-profile-tab-sub-ul-count {background: #eaeaea;padding: 5px;border-radius: 100%;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-subcontent .uwp-profile-subnav ul li.active a span span.uwp-profile-tab-sub-ul-count {color: #333333;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul {width: 100%;float: left;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li {width: 97%;float: left;padding: 10px;background: #FFFF;border-radius: 5px;margin: 0 0 10px 0;border: 0;border-bottom: 1px solid #CCC;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li:first-child {border-top: 1px solid #CCC;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li a.uwp-profile-item-img {float: left;width: 15%;margin-right: 10px;border: 1px solid #CCC;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li h3 {float: left;width: 80%;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li div {width: 80%;float: left;margin: 5px 0;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li div .uwp-ratings {width: 100%;float: left;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li div .uwp-ratings .gd-rating-outer-wrap {width: 100%;float: left;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li:nth-child(odd) {background: #f5f5f5;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block ul.uwp-profile-item-ul li a.uwp-profile-item-img img {margin: 0px;width: 100%;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block  .uwp-pagination {width: 100%;float: left;margin: 0px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block .uwp-pagination ul.page-numbers {padding: 10px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block .uwp-pagination ul.page-numbers li span,.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block .uwp-pagination ul.page-numbers li a {padding: 10px 15px;border-radius: 0;color: #bd1f1f;font-weight: bold;border: 1px solid #d9d9d9;border-right: 0px;margin: 0px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block .uwp-pagination ul.page-numbers li span.current {color: #000;background: #f5f5f5;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block .uwp-pagination ul.page-numbers li:last-child span,.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block .uwp-pagination ul.page-numbers li:last-child a {border-right: 1px solid #d9d9d9;border-radius: 0px 5px 5px 0;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block .uwp-pagination ul.page-numbers li:first-child span,.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile-content .uwp-profile-item-block .uwp-pagination ul.page-numbers li:first-child a{border-radius: 5px 0px 0px 5px;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile .uwp-button-wrap.uwp-verified-wrap {width: 100%;float: left;text-align: center;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile .uwp-button-wrap.uwp-verified-wrap a {width: auto;padding: 10px;background: #d32323;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile .uwp-button-wrap.uwp-verified-wrap a:hover {background: #bd1f1f;box-shadow: 0 5px 10px #bdbcbc;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile .uwp-button-wrap.uwp-verified-wrap a.uwp_button.uwp_verify_request {background: #71ce58;}
+.whoop-common.whoop-common-header .uwp_page .uwp-profile-main .uwp-profile .uwp-button-wrap.uwp-verified-wrap a.uwp_button.uwp_verify_request:hover {background: #5aa546;}
+.whoop-common.whoop-common-header .uwp_page .uwp-users-list .uwp-users-list-sort-search .uwp-user-sort {width: 35%;}
+.whoop-common.whoop-common-header .uwp_page .uwp-users-list .uwp-users-list-sort-search .uwp-user-sort select {display: inline-block;}
