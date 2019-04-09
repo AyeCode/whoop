@@ -1,0 +1,35 @@
+#site-header{
+  border:none;
+  box-shadow: none;
+
+  .menu-wrapper{
+    background: #fafafa;
+    border-bottom: 1px solid #e6e6e6;
+
+    a{
+      color: #2b2b2b;
+    }
+
+
+    #primary-nav{
+      width: 100%;
+      margin: 0;
+
+      #menu-gd-menu{
+        float: left;
+
+        li{
+          border-right: 1px solid #e6e6e6;
+          padding: 0 15px;
+          &:first-child{
+            border-left: 1px solid #e6e6e6;
+          }
+          a{
+            text-transform: initial;
+          }
+        }
+      }
+    }
+  }
+
+}

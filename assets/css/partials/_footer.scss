@@ -1,0 +1,23 @@
+#footer{
+  font-size: 15px;
+  .footer-widgets{
+    .widgettitle{
+      text-transform: inherit;
+      border: none;
+      box-shadow: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    ul{
+      li{
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  .copyright{
+    font-size: 14px;
+  }
+}

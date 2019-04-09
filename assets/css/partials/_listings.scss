@@ -1,0 +1,44 @@
+body.whoop-whoop{
+  .geodir-category-list-view {
+    >li{
+      border-top: 1px solid #e6e6e6;
+      font-size: 14px;
+
+      .geodir-direction-nav{
+        .geodir-prev,.geodir-next{
+          opacity: 0.4;
+          border-radius: 0;
+          font-size: 20px;
+          width: 24px;
+        }
+        .geodir-prev{
+          left:0;
+          border-bottom-left-radius: 3px;
+          border-top-left-radius: 3px;
+        }
+        .geodir-next{
+          right:0;
+          border-bottom-left-radius: 3px;
+          border-top-left-radius: 3px;
+        }
+
+      }
+
+      &:hover{
+        .geodir-direction-nav{
+          .geodir-prev,.geodir-next{
+            opacity: 0.6;
+          }
+        }
+      }
+
+    }
+    h2.geodir-entry-title{
+      font-size: 16px;
+    }
+
+    .gd-rating-wrap{
+      font-size: 20px;
+    }
+  }
+}

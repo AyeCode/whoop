@@ -1,0 +1,108 @@
+#site-header{
+
+  .header-top{
+    display: flex;
+    flex-wrap: nowrap;
+
+    .header-top-item{
+      padding: 0;
+      margin: 15px 0;
+    }
+    .site-logo-wrap{
+      margin-bottom: 0;
+      width: auto;
+    }
+    .header-search{
+      display: inline-block;
+      flex: auto;
+      padding: 0 10px;
+      .geodir-search-container{
+        .geodir-loc-bar{
+          margin: 0;
+          padding: 0;
+          border: none;
+
+          .geodir-loc-bar-in{
+            padding: 0;
+            border: none;
+            background: none;
+            .geodir-search{
+
+              .gd-suggestions-dropdown{
+                z-index: 5000;
+              }
+
+              &>div,&>button{
+                padding: 0;
+                margin: 0 !important;
+              }
+
+              input{
+                border-radius: 0;
+                border: none;
+              }
+
+              .gd-search-field-search{
+
+                input.gd_search_text{
+                  border-top-left-radius: 3px;
+                  border-bottom-left-radius: 3px;
+                }
+
+                &:after{
+                  content: '';
+                  width: 1px;
+                  position: absolute;
+                  right: 0;
+                  top: 20%;
+                  background-color: #e6e6e6;
+                  height: 60%;
+                }
+
+              }
+
+              .geodir_submit_search{
+                border: none;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+              }
+              .geodir-show-filters{
+                display: none;
+                border: none;
+              }
+
+            }
+          }
+        }
+
+        //&.geodir-advance-search-default{
+        //  .geodir_submit_search{
+        //    border-radius: 0;
+        //  }
+        //  .geodir-show-filters{
+        //    border-top-left-radius: 0;
+        //    border-bottom-left-radius: 0;
+        //
+        //  }
+        //}
+
+      }
+
+
+    }
+
+    .header-user{
+        .whoop-register{
+          margin-left:3px;
+          background: #f5f5f5;
+          color: #000;
+        }
+      a{
+        padding: 9px 12px;
+        border: none;
+        font-weight: bold;
+      }
+    }
+  }
+
+}

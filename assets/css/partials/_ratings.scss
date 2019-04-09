@@ -1,0 +1,18 @@
+.gd-rating-wrap{
+  .gd-rating-background{
+    .fas{
+      &.fa-stop{
+        &:after{
+          content: "\f005";
+          margin-left: 3%;
+          zoom: 0.5;
+          vertical-align: middle;
+          color: #fff;
+          position: absolute;
+          top: 28%;
+          display: block;
+        }
+      }
+    }
+  }
+}
