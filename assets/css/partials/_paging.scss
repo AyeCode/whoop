@@ -1,0 +1,24 @@
+body.whoop-whoop{
+  .whoop-archive-listings{
+    .geodir-pagination{
+      padding: 10px 0;
+      margin: 10px 0;
+      border:1px solid #efefef;
+      border-left: none;
+      border-right: none;
+      display: flex;
+      .page-numbers{
+        border:none;
+        padding: 0 !important;
+        margin: 0;
+        min-width: inherit;
+      }
+
+      .gd-pagination-details{
+        flex:auto;
+        line-height: 2em;
+      }
+
+    }
+  }
+}

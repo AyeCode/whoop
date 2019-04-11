@@ -1,0 +1,27 @@
+#site-header {
+  &.site-header-hero{
+    .primary-nav.home_middle_menu{
+      ul.menu{
+        margin: 0;
+        text-align: center;
+        li{
+          display: inline-block;
+          list-style-type: none;
+          position: relative;
+          padding: 0;
+          padding-left: 4px;
+          color: #fff;
+          a{
+            background: transparent;
+            color: #fff;
+            font-size: 15px;
+            padding: 5px 12px;
+            margin-top: 4px;
+            font-weight:bold;
+          }
+        }
+      }
+    }
+  }
+
+}

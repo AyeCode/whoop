@@ -31,63 +31,11 @@
 			 */
 			do_action( 'dt_before_site_logo' ); ?>
 
-			<div class="header-top-item site-logo-wrap">
-				<?php if ( get_theme_mod( 'logo', false ) ) : ?>
-					<div class='site-logo'>
-						<a href='<?php echo esc_url( home_url( '/' ) ); ?>'
-						   title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img
-								src='<?php echo esc_url( get_theme_mod( 'logo', false ) ); ?>'
-								alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
-					</div>
-				<?php else : ?>
-					<?php
-					if ( display_header_text() ) {
-						$style = ' style="color:#' . get_header_textcolor() . ';"';
-					} else {
-						$style = ' style="display:none;"';
-					}
-
-					if ( display_header_text() ) : ?>
-						<?php
-						$desc  = get_bloginfo( 'description', 'display' );
-						$class = '';
-						if ( ! $desc ) {
-							$class = 'site-title-no-desc';
-						}
-						?>
-						<hgroup>
-							<h1 class='site-title <?php echo $class; ?>'>
-								<a <?php echo $style; ?> href='<?php echo esc_url( home_url( '/' ) ); ?>'
-								                         title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'
-								                         rel='home'><?php bloginfo( 'name' ); ?></a>
-							</h1>
-							<?php
-							if ( $enable_header_top != '1' ) { ?>
-								<h2 class="site-description">
-									<a <?php echo $style; ?> href='<?php echo esc_url( home_url( '/' ) ); ?>'
-									                         title='<?php echo esc_attr( $desc ); ?>'
-									                         rel='home'><?php echo $desc; ?></a>
-								</h2>
-							<?php } ?>
-						</hgroup>
-					<?php endif; ?>
-				<?php endif; ?>
-			</div>
-
-			<div class="header-top-item header-search">
-				<?php
-				if(defined('GEODIRECTORY_VERSION')){
-					$whoop_search_shortcode = "[gd_search]";
-					echo do_shortcode($whoop_search_shortcode);
-				}
-				?>
-			</div>
-			<div class="header-top-item header-user">
-				<?php
-				echo "<a href='".wp_login_url( get_permalink() )."' class='dt-btn button whoop-button whoop-login'>".__("Log in","whoop")."</a>";
-				echo "<a href='".wp_registration_url()."' class='dt-btn button whoop-button whoop-register'>".__("Sign up","whoop")."</a>";
-				?>
-			</div>
+			<?php
+			get_template_part( 'template-parts/header/logo');
+			get_template_part( 'template-parts/header/search');
+			get_template_part( 'template-parts/menu/user');
+			?>
 
 			<?php
 			if ( has_nav_menu( 'primary-menu' ) ) {
@@ -104,20 +52,9 @@
 
 		</div>
 
-		<div class="menu-wrapper">
-			<div class="container menu-container">
-				<?php if ( has_nav_menu( 'primary-menu' ) ) { ?>
-					<nav id="primary-nav" class="primary-nav" role="navigation">
-						<?php
-						wp_nav_menu( array(
-							'container'      => false,
-							'theme_location' => 'primary-menu',
-						) );
-						?>
-					</nav>
-				<?php } ?>
-			</div>
-		</div>
+		<?php
+			get_template_part( 'template-parts/menu/primary');
+		?>
 
 	</header>
 <?php do_action( 'dt_after_header' ); ?>

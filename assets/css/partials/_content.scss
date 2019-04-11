@@ -1,0 +1,20 @@
+#ds-container{
+  >.container{
+    min-height: 60vh;
+    .content-box{
+      article{
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 5px 0;
+      }
+    }
+    .blog-sidebar{
+      margin-top: 12px;
+      .widget{
+        box-shadow: none;
+        padding: 20px 10px;
+      }
+    }
+  }
+}

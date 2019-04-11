@@ -21,16 +21,18 @@ class Whoop {
 	 * @since 2.0.0
 	 */
 	public function __construct() {
-		
+
 		$this->includes();
-		add_action('after_setup_theme', array($this,'theme_setup'));
+		add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
 	}
 
+	
 	/**
 	 * Include any files required.
 	 */
 	public function includes(){
 		require_once( dirname( __FILE__ ) . '/class-whoop-assets.php' );
+		require_once( dirname( __FILE__ ) . '/class-whoop-menus.php' );
 	}
 	
 	public function theme_setup(){

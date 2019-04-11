@@ -8,10 +8,14 @@
 
     a{
       color: #2b2b2b;
+      i,svg{
+        margin-right: 4px;
+        font-size: 18px;
+      }
     }
 
 
-    #primary-nav{
+    .primary-nav{
       width: 100%;
       margin: 0;
 
@@ -20,12 +24,13 @@
 
         li{
           border-right: 1px solid #e6e6e6;
-          padding: 0 15px;
+          padding: 0;
           &:first-child{
             border-left: 1px solid #e6e6e6;
           }
           a{
             text-transform: initial;
+            padding: 12px 15px;
           }
         }
       }
