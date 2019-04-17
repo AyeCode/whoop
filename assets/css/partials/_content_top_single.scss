@@ -1,0 +1,184 @@
+.whoop-top-content-single{
+
+  .geodir-notifications{
+    padding-bottom: 20px;
+  }
+  .whoop-archive-title-wrap{
+    .entry-title{
+      margin-bottom: 0;
+      padding-bottom: 5px;
+      font-size: 34px;
+      font-weight: bold;
+    }
+    .whoop-title-meta-wrap{
+      text-align: left;
+      position: relative;
+      .whoop-top-claim-wrap{
+        position: absolute;
+        bottom: 7px;
+        left: 10px;
+        .gd-badge-meta-claimed{
+          margin-left: 0;
+          padding-left: 0;
+          .gd-badge{
+            margin-left: 0;
+            padding-left: 0;
+            i,svg{
+              font-size: 18px;
+            }
+            .gd-secondary{
+              font-size: 14px;
+              color: #333;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .whoop-single-meta-wrap{
+    display: flex;
+    .whoop-single-top-left-wrap{
+      flex:auto;
+      .gd-rating-output{
+        font-size: 24px;
+      }
+    }
+    .whoop-single-top-right-wrap{
+      //flex:auto;
+      .whoop-top-review-button{
+        display: inline-block;
+        .gd-badge{
+          font-size: 18px;
+          border-radius: 4px;
+          vertical-align: sub;
+        }
+      }
+      .whoop-top-action-buttons{
+        display: inline-block;
+        vertical-align: top;
+        .whoop-top-action-buttons-wrap{
+          border: 1px solid #ccc;
+          display: block;
+          overflow: hidden;
+          border-radius: 3px;
+          //padding: 3px;
+          background: #fff;
+          >div{
+            display: inline-block;
+            border-left: 1px solid #ccc;
+            padding: 3px 3px 5px 3px;
+            &:first-child{
+              border-left: none;
+            }
+          }
+          .gd-badge-meta{
+            margin: 0;
+            .gd-badge{
+              color: #666 !important;
+              background-color: transparent !important;
+              font-size: 14px;
+            }
+
+            &.gd-lists-is-in-user-lists{
+              .gd-badge {
+                color: #d32323 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .whoop-single-details-wrap{
+    display: flex;
+    padding-top: 15px;
+    margin-bottom: -42px;
+    .whoop-mapbox-wrap{
+      background: #fff;
+      display: block;
+      padding: 5px;
+      border: 1px solid #ccc;
+      max-width:300px;
+      .whoop-mapbox{
+        .whoop-mapbox-map{
+          border: 1px solid #ccc;
+          display: block;
+          overflow: hidden;
+        }
+        .whoop-mapbox-details{
+          padding: 5px;
+          display: block;
+          .geodir-field-address{
+            font-weight: bold;
+            margin-left: 25px;
+            .geodir_post_meta_icon{
+              margin-left: -25px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+    .whoop-images-wrap{
+      flex:auto;
+      position: relative;
+      .whoop-images {
+        margin: 0;
+        position: absolute;
+        //top: 50%;
+        //-ms-transform: translateY(-50%);
+        //transform: translateY(-50%);
+        z-index: 100;
+        bottom: 40px;
+        .geodir-image-container {
+          ul.geodir-images.geodir-gallery {
+            li {
+              height: 220px;
+              width: 220px;
+              margin: 0;
+              overflow: visible;
+              transition: all .25s;
+              transition-timing-function: ease-in-out;
+              border: none;
+              &:nth-child(2) {
+                z-index: 1;
+                transform: scale(1.1);
+                -webkit-box-shadow: 0 0 25px -3px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 0 25px -3px rgba(0, 0, 0, 0.5);
+              }
+
+              a.geodir-lightbox-image i.fa-search-plus {
+
+              }
+
+              &:hover {
+                z-index: 5000;
+                -webkit-box-shadow: 0 0 25px -3px rgba(0, 0, 0, 0.5) !important;
+                box-shadow: 0 0 25px -3px rgba(0, 0, 0, 0.5) !important;
+                transform: scale(1.1) !important;
+                a.geodir-lightbox-image:hover img {
+                  transform: scale(1);
+                }
+
+                a.geodir-lightbox-image:hover i.fa-search-plus {
+                  padding-top: 44%;
+                }
+              }
+
+            }
+
+            &:hover {
+              li {
+                transform: scale(1);
+                -webkit-box-shadow: none;
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

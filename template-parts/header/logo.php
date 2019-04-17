@@ -29,7 +29,7 @@
 					                         rel='home'><?php bloginfo( 'name' ); ?></a>
 				</h1>
 				<?php
-				if ( $enable_header_top != '1' ) { ?>
+				if ( isset($enable_header_top) && $enable_header_top != '1' ) { ?>
 					<h2 class="site-description">
 						<a <?php echo $style; ?> href='<?php echo esc_url( home_url( '/' ) ); ?>'
 						                         title='<?php echo esc_attr( $desc ); ?>'

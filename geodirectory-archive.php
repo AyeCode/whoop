@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: GD Page
+ * GD Archive Page
  */
 get_header();
 
@@ -22,7 +22,7 @@ get_template_part( 'template-parts/content/archive',"top" );
 		<div class="row">
 			<?php if ($dt_blog_sidebar_position == 'left') { ?>
 				<div class="col-lg-4 col-md-3">
-					<div class="sidebar blog-sidebar page-sidebar">
+					<div class="sidebar page-sidebar geodir-sidebar">
 						<?php dynamic_sidebar('sidebar-gd'); ?>
 					</div>
 				</div>
@@ -31,7 +31,7 @@ get_template_part( 'template-parts/content/archive',"top" );
 				<div class="content-box content-single">
 					<?php if (!have_posts()) : ?>
 						<div class="alert alert-warning">
-							<?php _e('Sorry, no results were found.', 'directory-starter'); ?>
+							<?php _e('Sorry, no results were found.', 'whoop'); ?>
 						</div>
 						<?php get_search_form(); ?>
 					<?php endif; ?>
@@ -53,7 +53,7 @@ get_template_part( 'template-parts/content/archive',"top" );
 			</div>
 			<?php if ($dt_blog_sidebar_position == 'right') { ?>
 				<div class="col-lg-4 col-md-3">
-					<div class="sidebar blog-sidebar page-sidebar">
+					<div class="sidebar page-sidebar geodir-sidebar">
 						<?php dynamic_sidebar('sidebar-gd'); ?>
 					</div>
 				</div>

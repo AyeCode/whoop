@@ -1,4 +1,4 @@
-<article <?php post_class('whoop-archive-listings'); ?>>
+<article <?php post_class(); ?>>
 	<div class="entry-content entry-summary">
 		<?php
 		global $more;

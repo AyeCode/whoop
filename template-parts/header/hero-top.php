@@ -7,9 +7,10 @@
 	 * @since 1.0.2
 	 */
 	do_action( 'dt_before_site_logo' ); ?>
+	<h1 class="entry-title"><?php the_title(); ?></h1>
 
 	<?php
-	get_template_part( 'template-parts/header/logo');
+//	get_template_part( 'template-parts/header/logo');
 	get_template_part( 'template-parts/header/search');
 	get_template_part( 'template-parts/menu/home','middle');
 

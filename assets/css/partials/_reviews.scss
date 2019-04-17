@@ -1,0 +1,60 @@
+.content-single{
+  .geodir-comments-area{
+    .commentlist-wrap{
+      box-shadow: none;
+      padding: 0;
+      ul.commentlist{
+        li{
+          background: #fff;
+          border-top: 1px solid #ccc;
+          padding: 10px 0;
+          border-radius: 0;
+          >.comment{
+            display: flex;
+            flex-wrap: wrap;
+            .comment-author{
+              flex-basis: 30%;
+              .avatar{
+                border-radius: 7%;
+                margin-bottom: 45px; // helps keep the time aligned
+              }
+              .reviewer{
+                display:block;
+              }
+              .geodir-review-author{
+                text-align: left;
+                float: none;
+                margin: 0;
+                display: inline-block;
+              }
+              .geodir-review-time{
+                float: none;
+                margin-left:0;
+                display: block;
+              }
+            }
+            .comment-content{
+              flex-basis: 70%;
+              padding-left: 15px;
+            }
+            .comment-links{
+              flex-basis: 100%;
+            }
+          }
+
+        }
+      }
+    }
+
+    #respond{
+      margin: 0;
+      padding: 20px 0;
+      border-top: 1px solid #eee;
+      box-shadow: none;
+      #reply-title{
+        margin-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+}

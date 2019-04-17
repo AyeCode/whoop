@@ -7,11 +7,17 @@
 @import "partials/header_top";
 @import "partials/content";
 @import "partials/content_top";
+@import "partials/content_top_single";
+@import "partials/share";
 @import "partials/content_archive";
+@import "partials/content_single";
 @import "partials/listings";
 @import "partials/paging";
 @import "partials/ratings";
 @import "partials/footer";
+@import "partials/sidebar";
+@import "partials/comments";
+@import "partials/reviews";
 
 body{
   background: #fff;

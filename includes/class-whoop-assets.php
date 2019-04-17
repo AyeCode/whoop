@@ -23,6 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Whoop_Assets {
 
 
+	/**
+	 * Init
+	 */
 	public static function init(){
 		add_filter('body_class', array(__CLASS__,'body_classes') );
 		add_action( 'wp_enqueue_scripts', array(__CLASS__,'styles') );
@@ -42,6 +45,9 @@ class Whoop_Assets {
 		return $classes;
 	}
 
+	/**
+	 * Enqueue styles
+	 */
 	public static function styles(){
 
 		// register
@@ -52,19 +58,24 @@ class Whoop_Assets {
 
 	}
 
+	/**
+	 * Enqueue scripts
+	 */
 	public static function scripts(){
 
 		// register
 		wp_register_script( 'whoop-js', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), WHOOP_VERSION, true );
 
 		// enqueue
-		wp_enqueue_script( 'whoop-js' );
+		//wp_enqueue_script( 'whoop-js' ); // not used yet
 	}
 
 	/**
 	 * Override some CSS constants
 	 */
 	public static function constants(){
+		//
+		define('DT_HEADER_BG_COLOR', '#ed6d62');
 		define('DT_P_NAV_HEIGHT', '40px');
 		define('DT_P_NAV_LINE_HEIGHT', '40px');
 		define('DT_LOGO_MARGIN_TOP', '0px');
@@ -74,27 +85,20 @@ class Whoop_Assets {
 		define('DT_LINK_COLOR', '#0073bb');
 		define('DT_LINK_VISITED', '#0073bb');
 		define('DT_LINK_HOVER', '#048de2');
-
-//		define('DT_HEADER_LINK_COLOR', '#d32323');
-		//
+		define('DT_H1TOH6_COLOR', '#d32323');
 
 		// Footer
-//		define('DT_FW_TEXT_COLOR', '#048de2');
 		define('DT_FW_H1TOH6_COLOR', '#d32323');
 		define('DT_FW_LINK_COLOR', '#0073bb');
 		define('DT_FW_LINK_HOVER', '#048de2');
 		define('DT_FW_LINK_VISITED', '#0073bb');
 		define('DT_FW_BG', '#f5f5f5');
 		define('DT_FW_BORDER_BOTTOM_COLOR', '#f5f5f5');
-//		define('', '');
-//		define('', '');
-//		define('', '');
 		define('DT_COPYRIGHT_LINK_COLOR', '#0073bb');
 		define('DT_COPYRIGHT_LINK_HOVER', '#048de2');
 		define('DT_COPYRIGHT_LINK_VISITED', '#0073bb');
 		define('DT_COPYRIGHT_BG', '#f5f5f5');
 		define('DT_COPYRIGHT_BORDER_COLOR', '#f5f5f5');
-		//
 	}
 }
 Whoop_Assets::init();

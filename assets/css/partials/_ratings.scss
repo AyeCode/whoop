@@ -9,8 +9,10 @@
           vertical-align: middle;
           color: #fff;
           position: absolute;
-          top: 28%;
+          top: 50%;
           display: block;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
         }
       }
     }

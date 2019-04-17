@@ -5,7 +5,8 @@
     ul#menu-user{
       margin: 15px 0;
       li{
-        float: left;
+        //float: left;
+        display: inline-block;
         list-style-type: none;
         position: relative;
         padding: 0;
@@ -23,9 +24,85 @@
           font-size: 14px;
         }
 
+        .sub-menu{
+          display: none;
+          position: absolute;
+          left: 0;
+          opacity: 0;
+          z-index: 1;
+        }
+
+        &:hover{
+          >.sub-menu{
+            display: block;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
       }
     }
+
+    &.logged-in{
+      ul#menu-user {
+        >li {
+          a{
+            padding: 0 5px 0 0;
+            img{
+              height: 37px;
+              width: auto;
+              float: left;
+              border-top-left-radius: 3px;
+              border-bottom-left-radius: 3px;
+
+            }
+
+            &:after{
+
+              display: inline-block;
+              margin-left: .255em;
+              vertical-align: -0.45em;
+              content: "";
+              border-top: .3em solid;
+              border-right: .3em solid transparent;
+              border-bottom: 0;
+              border-left: .3em solid transparent;
+
+            }
+          }
+
+          ul.sub-menu{
+
+            padding-top:10px;
+            color: #333;
+            width: 200px;
+            float: left;
+            left: 0;
+            right: 0;
+            margin-left: -140px;
+
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.05), -3px 3px 6px rgba(0,0,0,0.05);
+            li{
+              width: 100%;
+              background: #fff;
+              a{
+                width: 100%;
+                padding: 10px;
+                color: #333;
+                display: block;
+                &:after{
+                  display:none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
   }
+
+
 
   &.site-header-hero{
     .primary-nav.user_menu{

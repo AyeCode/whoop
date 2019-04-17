@@ -5,3 +5,19 @@ h2.comments-title,
 #comments h3#reply-title {
   font-size: 25px;
 }
+
+#searchform{
+  input{
+    display: inline-block;
+  }
+}
+
+.sidebar {
+  .widget{
+    margin-bottom: 0;
+
+    &:last-child{
+      margin-bottom: 20px;
+    }
+  }
+}

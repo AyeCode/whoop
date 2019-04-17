@@ -1,12 +1,15 @@
 <?php
 /**
- * Template Name: GD Page
+ * GD Single Page
  */
 get_header();
 
 do_action('dt_page_before_main_content'); 
 
 $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', DT_BLOG_SIDEBAR_POSITION));
+
+get_template_part( 'template-parts/content/single',"top" );
+
 ?>
 <div class="fullwidth-sidebar-container">
 	<div class="sidebar top-sidebar">
@@ -14,12 +17,12 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 	</div>
 </div>
 
-<div class="container">
+<div class="container whoop-single-main-content">
 
 	<div class="row">
 	<?php if ($dt_blog_sidebar_position == 'left') { ?>
 		<div class="col-lg-4 col-md-3">
-			<div class="sidebar blog-sidebar page-sidebar">
+			<div class="sidebar page-sidebar geodir-sidebar geodir-sidebar-single">
 				<?php dynamic_sidebar('sidebar-gd'); ?>
 			</div>
 		</div>
@@ -28,7 +31,7 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 		<div class="content-box content-single">
 			<?php if (!have_posts()) : ?>
 				<div class="alert alert-warning">
-					<?php _e('Sorry, no results were found.', 'directory-starter'); ?>
+					<?php _e('Sorry, no results were found.', 'whoop'); ?>
 				</div>
 				<?php get_search_form(); ?>
 			<?php endif; ?>
@@ -36,7 +39,7 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 			while ( have_posts() ) : the_post();
 
 				// Include the page content template.
-				get_template_part( 'template-parts/content/content' );
+				get_template_part( 'template-parts/content/single' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
@@ -50,7 +53,7 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 	</div>
 	<?php if ($dt_blog_sidebar_position == 'right') { ?>
 		<div class="col-lg-4 col-md-3">
-			<div class="sidebar blog-sidebar page-sidebar">
+			<div class="sidebar page-sidebar geodir-sidebar geodir-sidebar-single">
 				<?php dynamic_sidebar('sidebar-gd'); ?>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: GD Page
+ * GD General Page
  */
 get_header();
 
@@ -28,7 +28,7 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 		<div class="content-box content-single">
 			<?php if (!have_posts()) : ?>
 				<div class="alert alert-warning">
-					<?php _e('Sorry, no results were found.', 'directory-starter'); ?>
+					<?php _e('Sorry, no results were found.', 'whoop'); ?>
 				</div>
 				<?php get_search_form(); ?>
 			<?php endif; ?>

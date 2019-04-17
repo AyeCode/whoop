@@ -6,18 +6,56 @@
       height: 100vh;
       position: relative;
 
+    .entry-title{
+      text-align: center;
+      color: #fff;
+      border: none;
+      font-size: 40px;
+    }
+
       .menu-wrapper{
         background: transparent;
         border: none;
 
         .menu-container{
           display: flex;
+
+          .header-home-menu{
+            flex:auto;
+          }
+
+          .header-user{
+            #menu-user {
+              > li {
+                border: none;
+                &:hover{
+                  background: transparent;
+                }
+              }
+            }
+
+
+            .logged-in{
+              #menu-user{
+                >li{
+                  border:none;
+                  &:hover{
+                    background: transparent;
+                  }
+                  >a{
+                    padding: 0 5px 0 0;
+                    background: #0000007d;
+                  }
+                }
+              }
+            }
+          }
         }
 
         .primary-nav.home_menu{
           flex:auto;
           width: auto;
-         #menu-gd-menu{
+         ul.menu{
            margin: 15px 0;
            li{
              border:none;

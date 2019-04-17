@@ -1,0 +1,41 @@
+.geodir-sidebar{
+
+  .widget{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+
+    &:last-child{
+      margin-bottom: 20px;
+    }
+    .widgettitle{
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+}
+
+.geodir-sidebar-single{
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50%;
+    border-left: 1px solid #eee;
+    top: 66px;
+  }
+
+}
+
+
+
+.sidebar{
+  .widgettitle{
+
+  }
+}

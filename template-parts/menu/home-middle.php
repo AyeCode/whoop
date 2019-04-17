@@ -10,7 +10,7 @@
 				?>
 			</nav>
 		<?php }else{
-			echo 'xxxx';
+			// no menu
 		} ?>
 
 	</div>

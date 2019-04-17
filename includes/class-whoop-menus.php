@@ -23,6 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Whoop_Menus {
 
 
+	/**
+	 * Init
+	 */
 	public static function init(){
 		add_action( 'after_setup_theme', array( __CLASS__, 'theme_setup' ) );
 		add_filter( 'wp_nav_menu_items', array( __CLASS__, 'font_awesome_menu_icons' ), 10, 2 );

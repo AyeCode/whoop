@@ -23,11 +23,7 @@
 	
 	<header id="site-header" class="site-header site-header-hero <?php echo $extra_class; ?>" role="banner"
 	        style="<?php echo dt_header_image(); ?>">
-
-
-
-
-
+		
 		<div id="whoop-hero" class="whoop-hero">
 			<div class="featured-area type-location">
 
@@ -37,12 +33,10 @@
 					get_template_part( 'template-parts/header/hero','image');
 					get_template_part( 'template-parts/menu/home');
 					get_template_part( 'template-parts/header/user');
-					get_template_part( 'template-parts/header/home', 'top');
+					get_template_part( 'template-parts/header/hero', 'top');
 					get_template_part( 'template-parts/header/hero','credits');
-
 					?>
-
-
+					
 				</div>
 				
 			</div>
