@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Whoop 2.0.0.0\n"
+"Project-Id-Version: Whoop 2.0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-17 15:49+0100\n"
-"PO-Revision-Date: 2019-04-17 15:49+0100\n"
+"POT-Creation-Date: 2019-04-17 16:31+0100\n"
+"PO-Revision-Date: 2019-04-17 16:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: AyeCode Ltd <contact@ayecode.io>\n"
 "Language: en_US\n"
@@ -37,15 +37,15 @@ msgstr ""
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: includes/class-whoop-menus.php:37
+#: includes/class-whoop-menus.php:40
 msgid "Home menu"
 msgstr ""
 
-#: includes/class-whoop-menus.php:38
+#: includes/class-whoop-menus.php:41
 msgid "Home middle menu"
 msgstr ""
 
-#: includes/class-whoop-menus.php:39
+#: includes/class-whoop-menus.php:42
 msgid "User menu"
 msgstr ""
 
