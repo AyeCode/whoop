@@ -30,6 +30,11 @@ class Whoop {
 	public function includes(){
 		require_once( dirname( __FILE__ ) . '/class-whoop-assets.php' );
 		require_once( dirname( __FILE__ ) . '/class-whoop-menus.php' );
+		require_once( dirname( __FILE__ ) . '/class-whoop-hero-background.php' );
+
+
+//		if(is_admin())
+		require_once( dirname( __FILE__ ) . '/admin/class-whoop-admin-customizer.php' );
 	}
 
 	/**

@@ -1,0 +1,62 @@
+.site-header-hero{
+  #whoop-hero{
+    background: #000;
+
+    .geodir-search-container{
+      opacity: 0.95;
+    }
+
+    .whoop-hero-background-wrap{
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      filter: brightness(50%);
+      .whoop-hero-background-wrap-inner{
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;
+
+        img,iframe {
+          position: absolute;
+          object-fit: cover;
+          width: 100%;
+          //height: auto;
+
+          opacity: 0;
+          -webkit-transition: opacity 0.5s ease-in-out;
+          -moz-transition: opacity 0.5s ease-in-out;
+          -o-transition: opacity 0.5s ease-in-out;
+          transition: opacity 0.5s ease-in-out;
+
+
+          pointer-events:none;
+          border: 0;
+          height: 100%;
+          left: 0;
+          top: 0;
+
+
+          &.whoop-fade-in{
+            opacity: 1;
+          }
+
+          &.whoop-js-fade-in{
+            opacity: 1;
+            display:none;
+            -webkit-transition: initial;
+            -moz-transition: initial;
+            -o-transition: initial;
+            transition: initial;
+          }
+        }
+
+
+      }
+
+
+
+
+    }
+
+  }
+}
