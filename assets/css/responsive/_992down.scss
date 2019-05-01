@@ -1,0 +1,52 @@
+@media (max-width: 992px) {
+
+  #site-header {
+
+    .header-top{
+      flex-direction: column;
+    }
+    .container {
+      &.header-credits{
+        min-height: initial;
+      }
+    }
+
+    .header-top-item{
+      &.header-search{
+        margin-bottom: 10px;
+      }
+    }
+
+
+    .header-user,.menu-wrapper{
+      display: none;
+    }
+  }
+
+
+  // single
+  .whoop-top-content-single {
+    .whoop-single-details-wrap{
+      flex-direction: column-reverse;
+      .whoop-images-wrap {
+        padding: 20px 0;
+        .whoop-images{
+          position: relative;
+          bottom: 0;
+        }
+      }
+
+      .whoop-mapbox-wrap{
+        max-width: inherit;
+        .whoop-mapbox{
+          display: flex;
+          flex-wrap: wrap;
+          >span{
+            min-width: 300px;
+          }
+        }
+      }
+    }
+  }
+
+}

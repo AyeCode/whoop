@@ -9,6 +9,12 @@
 				) );
 				?>
 			</nav>
-		<?php } ?>
+		<?php }else{
+			if(get_current_user_id()){
+			?>
+			<div class="alert-info">
+				<p><?php _e('Add a main menu and it will show here', 'whoop'); ?></p>
+			</div>
+		<?php } }?>
 	</div>
 </div>

@@ -57,6 +57,12 @@
 
             }
 
+            &.whoop-my-account{
+              span{
+                display: none;
+              }
+            }
+
             &:after{
 
               display: inline-block;
@@ -126,6 +132,27 @@
             margin-top: 4px;
           }
         }
+      }
+    }
+  }
+
+  #whoop-account-nav{
+    display: none;
+  }
+
+
+
+}
+
+
+// mobile menu
+#mm-user-account-nav{
+
+  ul#mm-menu-user{
+    li{
+      a{
+        background-color: initial;
+        border-color: initial;
       }
     }
   }

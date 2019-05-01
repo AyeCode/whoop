@@ -1,6 +1,6 @@
 <?php
 // Define some constants
-if (!defined('WHOOP_VERSION')) define('WHOOP_VERSION', '2.0.0.1');
+if (!defined('WHOOP_VERSION')) define('WHOOP_VERSION', '2.0.0.3-beta');
 
 // Call Whoop
 require_once( dirname( __FILE__ ) . '/includes/class-whoop.php' );

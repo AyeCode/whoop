@@ -1,0 +1,20 @@
+@media (max-width: 768px) {
+  #site-header{
+    &.site-header-hero{
+      .featured-area {
+        .header-top{
+          width: 100%;
+        }
+      }
+    }
+
+    .container {
+      &.header-top{
+        margin-left: 40px;
+        margin-right: 40px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

@@ -38,18 +38,12 @@
                 margin: 0 !important;
               }
 
-              input{
+              input,select{
                 border-radius: 0;
                 border: none;
               }
 
-              .gd-search-field-search{
-
-                input.gd_search_text{
-                  border-top-left-radius: 3px;
-                  border-bottom-left-radius: 3px;
-                }
-
+              .gd-search-input-wrapper{
                 &:after{
                   content: '';
                   width: 1px;
@@ -58,6 +52,16 @@
                   top: 20%;
                   background-color: #e6e6e6;
                   height: 60%;
+                }
+              }
+              .gd-search-input-wrapper{
+                &:first-child{
+                  input,select{
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                  }
+
+
                 }
 
               }

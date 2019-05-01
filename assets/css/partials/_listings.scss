@@ -4,6 +4,10 @@ body.whoop-whoop{
       border-top: 1px solid #e6e6e6;
       font-size: 14px;
 
+      .geodir-image-container ul.geodir-images li:after{
+        margin-top: 100%;
+      }
+
       .geodir-direction-nav{
         .geodir-prev,.geodir-next{
           opacity: 0.4;

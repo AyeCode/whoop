@@ -4,15 +4,14 @@
       &.fa-stop{
         &:after{
           content: "\f005";
-          margin-left: 3%;
-          zoom: 0.5;
+          margin-left: -2%;
           vertical-align: middle;
           color: #fff;
           position: absolute;
           top: 50%;
           display: block;
           -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+          transform: translateY(-50%) scale(0.5);
         }
       }
     }

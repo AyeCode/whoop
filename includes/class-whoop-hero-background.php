@@ -51,6 +51,12 @@ class Whoop_Hero_Background {
 			$defaults = self::default_settings();
 			$settings = get_post_meta($post_id, '_whoop_hero', true);
 			$settings = wp_parse_args($settings,$defaults);
+
+			// GD
+			if(defined('GEODIRECTORY_VERSION') && $settings['type']==''){
+				$settings['type']='listing';
+			}
+
 			if($settings['type']=='gallery' && !empty($settings['id'])){
 
 				$ids = trim($settings['id']);
@@ -249,7 +255,14 @@ class Whoop_Hero_Background {
 		// get html
 		if($settings['type']==''){
 		//auto
-			$html .= self::output_featured();
+
+			if(defined('GEODIRECTORY_VERSION')){
+				$html .= self::output_listing($settings['id']);
+				$script = self::hero_script($settings);
+			}else{
+				$html .= self::output_featured();
+			}
+
 		}elseif($settings['type']=='featured'){
 			$html .= self::output_featured();
 		}elseif($settings['type']=='video'){

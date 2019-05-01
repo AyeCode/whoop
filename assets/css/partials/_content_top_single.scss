@@ -39,6 +39,7 @@
 
   .whoop-single-meta-wrap{
     display: flex;
+    flex-wrap: wrap-reverse;
     .whoop-single-top-left-wrap{
       flex:auto;
       .gd-rating-output{
@@ -132,16 +133,24 @@
         //transform: translateY(-50%);
         z-index: 100;
         bottom: 40px;
+        width: 100%;
         .geodir-image-container {
           ul.geodir-images.geodir-gallery {
             li {
-              height: 220px;
-              width: 220px;
+              height: auto;
+              width: 33%;
               margin: 0;
               overflow: visible;
               transition: all .25s;
               transition-timing-function: ease-in-out;
               border: none;
+
+              &:after{
+                content: " ";
+                display: block;
+                padding-bottom: 33%;
+              }
+
               &:nth-child(2) {
                 z-index: 1;
                 transform: scale(1.1);
