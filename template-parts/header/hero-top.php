@@ -16,12 +16,7 @@ do_action( 'dt_before_site_logo' ); ?>
 	get_template_part( 'template-parts/menu/home','middle');
 
 	?>
-
 	
-
-
-
-
 
 </div>
 <?php

@@ -198,9 +198,8 @@ class Whoop_Hero_Background {
 
 	public static function get_listing_image(){
 		global $wpdb;
-		$sql = $wpdb->prepare("SELECT * FROM " . GEODIR_ATTACHMENT_TABLE . " WHERE type = %s AND featured = 1 AND is_approved = 1 ORDER BY RAND() LIMIT 1 ",'post_images');
 		$image = array('html'=>'','caption'=>'','description'=>'');
-		$image_data = $wpdb->get_row($sql);
+		$image_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM " . GEODIR_ATTACHMENT_TABLE . " WHERE type = %s AND featured = 1 AND is_approved = 1 ORDER BY RAND() LIMIT 1 ",'post_images'));
 
 		if($image_data){
 			$img_tag = geodir_get_image_tag($image_data,'full' );

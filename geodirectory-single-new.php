@@ -1,6 +1,9 @@
 <?php
 /**
- * GD Single Page
+ * Template Name: GD Single New Style
+ *
+ * @package Whoop
+ * @since 2.0.0.0
  */
 get_header();
 
@@ -16,9 +19,13 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 	</div>
 </div>
 
-<?php get_template_part( 'template-parts/content/single',"top" ); ?>
+<div class="fullwidth-sidebar-container">
+	<div class="sidebar top-sidebar">
+		<?php if(defined('GEODIRECTORY_VERSION') ){	echo do_shortcode( '[gd_post_images types="logo,comment_images,post_images" type="slider" ajax_load="1" slideshow="1" show_title="1" animation="slide" controlnav="0" limit_show="4"]' ); } ?>
+	</div>
+</div>
 
-<div class="container whoop-single-main-content">
+<div class="container whoop-single-main-content whoop-single-main-content-new">
 
 	<div class="row">
 	<?php if ($dt_blog_sidebar_position == 'left') { ?>
@@ -39,7 +46,12 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 			<?php
 			while ( have_posts() ) : the_post();
 
-				// Include the page content template.
+				if(defined('GEODIRECTORY_VERSION') ){
+					get_template_part( 'template-parts/content/single',"top-new" );
+				}
+
+
+			// Include the page content template.
 				get_template_part( 'template-parts/content/single' );
 
 				// If comments are open or we have at least one comment, load up the comment template.

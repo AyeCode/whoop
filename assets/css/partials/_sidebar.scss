@@ -38,3 +38,26 @@
 
   }
 }
+
+.fullwidth-sidebar-container{
+  .sidebar{
+    .geodir-post-slider,.geodir-viewport{
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+}
+
+.whoop-single-main-content-new{
+  .geodir-sidebar-single{
+
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 2px;
+    &:before{
+      display: none;
+    }
+
+  }
+}

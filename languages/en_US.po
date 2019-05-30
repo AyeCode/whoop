@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Whoop 2.0.0.3-beta\n"
+"Project-Id-Version: Whoop 2.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-01 14:18+0100\n"
-"PO-Revision-Date: 2019-05-01 14:18+0100\n"
+"POT-Creation-Date: 2019-05-10 18:48+0100\n"
+"PO-Revision-Date: 2019-05-10 18:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: AyeCode Ltd <contact@ayecode.io>\n"
 "Language: en_US\n"
@@ -32,8 +32,8 @@ msgstr ""
 msgid " - Powered by %s."
 msgstr ""
 
-#: geodirectory-archive.php:34 geodirectory-single.php:34 geodirectory.php:31
-#: page-whoop.php:18
+#: geodirectory-archive.php:34 geodirectory-single-new.php:42
+#: geodirectory-single.php:35 geodirectory.php:31 page-whoop.php:18
 msgid "Sorry, no results were found."
 msgstr ""
 
@@ -130,43 +130,43 @@ msgstr ""
 msgid "Photo by %s"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:384
+#: includes/class-whoop-hero-background.php:383
 msgid "Hero Area Settings"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:398
+#: includes/class-whoop-hero-background.php:397
 msgid "Auto"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:399
+#: includes/class-whoop-hero-background.php:398
 msgid "Featured image"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:400
+#: includes/class-whoop-hero-background.php:399
 msgid "Video"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:401
+#: includes/class-whoop-hero-background.php:400
 msgid "Gallery"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:402
+#: includes/class-whoop-hero-background.php:401
 msgid "Listing images (GeoDirectory)"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:405
+#: includes/class-whoop-hero-background.php:404
 msgid "Show:"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:415
+#: includes/class-whoop-hero-background.php:414
 msgid "ID: (video id / attachments ids: 123,456,789)"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:418
+#: includes/class-whoop-hero-background.php:417
 msgid "Time: (time between images, 8000 =  8 seconds)"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:421
+#: includes/class-whoop-hero-background.php:420
 msgid "Brightness: (how bright the background is, default 50%)"
 msgstr ""
 
@@ -198,13 +198,13 @@ msgstr ""
 msgid "All Filters"
 msgstr ""
 
-#: template-parts/content/directory-content.php:15
-#: template-parts/content/single.php:15
+#: template-parts/content/directory-content.php:13
+#: template-parts/content/single.php:13
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content/directory-content.php:24
-#: template-parts/content/home.php:9 template-parts/content/single.php:24
+#: template-parts/content/directory-content.php:22
+#: template-parts/content/home.php:9 template-parts/content/single.php:22
 msgid "Edit"
 msgstr ""
 

@@ -76,9 +76,9 @@ class Whoop_Geodirectory_Content {
 				),
 				// show GD Dashboard
 				'gd_dashboard' => array(
-					'dashboard_title'   => __('GD Dashboard','geodirectory'),
+					'dashboard_title'   => __('GD Dashboard','whoop'),
 					'show_login'        => true,
-					'login_title'        => __('Login','geodirectory'),
+					'login_title'        => __('Login','whoop'),
 					'gd_wgt_showhide'   => 'show',
 					'gd_wgt_restrict'   => array(),
 				),

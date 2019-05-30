@@ -54,16 +54,13 @@
                   height: 60%;
                 }
               }
-              .gd-search-input-wrapper{
-                &:first-child{
+              div.gd-search-input-wrapper{
+                &:first-of-type{
                   input,select{
                     border-top-left-radius: 3px;
                     border-bottom-left-radius: 3px;
                   }
-
-
                 }
-
               }
 
               .geodir_submit_search{

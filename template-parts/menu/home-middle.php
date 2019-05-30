@@ -9,9 +9,7 @@
 				) );
 				?>
 			</nav>
-		<?php }else{
-			// no menu
-		} ?>
+		<?php }?>
 
 	</div>
 </div>

@@ -3,4 +3,10 @@
   a,a:visited{
     color: #ED6D62;
   }
+
+  &.whoop-single-main-content-new{
+    .content-single{
+      margin: 0;
+    }
+  }
 }

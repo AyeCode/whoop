@@ -20,9 +20,7 @@
 				) );
 				?>
 			</nav>
-		<?php }else{
-			//echo 'xxxx';
-		} ?>
+		<?php }?>
 		</div>
 		<?php 			get_template_part( 'template-parts/menu/user'); ?>
 

@@ -190,4 +190,39 @@
       }
     }
   }
+
+  &.whoop-top-content-single-new{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    h1{
+      border:none;
+    }
+
+    .whoop-title-wrap{
+      display: inline-block;
+    }
+    .whoop-title-meta-wrap{
+      display: inline-block;
+      vertical-align: sub;
+      .whoop-top-claim-wrap{
+        bottom: 1px;
+        .gd-badge{
+          background-color: #fff !important;
+        }
+      }
+    }
+    .whoop-single-meta-wrap{
+      flex-direction: column;
+      .whoop-single-top-right-wrap{
+        margin: 10px 0;
+        .whoop-top-review-button{
+          .gd-badge-meta{
+            margin-left: 0;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
 }
