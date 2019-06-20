@@ -146,10 +146,10 @@ class Whoop_Hero_Background {
 
 	public static function output_default(){
 		global $whoop_hero_credits;
-		$user_name = "Dan Gold";
-		$user_link = "<a href='https://www.danielcgold.com/' target='_blank' rel=\"nofollow\">$user_name</a>";
+		$user_name = "Burst";
+		$user_link = "<a href='https://burst.shopify.com//' target='_blank' rel=\"nofollow\">$user_name</a>";
 		$whoop_hero_credits = array(
-			'caption' => 'City Gourmet Cafe',
+			'caption' => 'Gourmet Cafe',
 			'description' => sprintf(__("Photo by %s","whoop"),$user_link ),
 		);
 		$image = '<img width="1600" height="1066" src="'.get_stylesheet_directory_uri().'/assets/images/whoop-splash.jpg" class="whoop-hero-image  wp-post-image " alt="" srcset="'.get_stylesheet_directory_uri().'/assets/images/whoop-splash.jpg 1600w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-300x200.jpg 300w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-768x512.jpg 768w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-1024x682.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px">';

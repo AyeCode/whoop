@@ -111,22 +111,18 @@ class Whoop_Geodirectory_Content {
 	}
 
 	public static function page_location_content($content){
-		//$content = "[gd_notifications]\n[gd_categories]\n[gd_map map_type='directory' width=100% height=300 search_filter=1 cat_filter=1 post_type_filter=1]\n[gd_search]\n[gd_listings post_limit=10]";
-
-		//$content = "\n".'[gd_loop layout=1]';
-		//$content .= "\n".'[gd_loop_paging]';
 		return $content;
 	}
 
 	public static function page_search_content($content){
-		$content = "\n".'[gd_loop layout=1]';
+		$content = "\n".'[gd_loop layout=0]';
 		$content .= "\n".'[gd_loop_paging]';
 		return $content;
 	}
 
 	public static function page_archive_content($content){
 		$content = '[gd_category_description]';
-		$content .= "\n".'[gd_loop layout=1]';
+		$content .= "\n".'[gd_loop layout=0]';
 		$content .= "\n".'[gd_loop_paging]';
 		return $content;
 	}

@@ -4,7 +4,7 @@ Tags: food-and-drink, blog, one-column, two-columns, left-sidebar, right-sidebar
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.2
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,9 @@ No, this is optional but recommended.
 
 == Changelog ==
 
+= 2.0.2 =
+* Splash image replaced with GPL compatible image - FIXED
+
 = 2.0.1 =
 * Added theme readme.txt - ADDED
 * Updated theme tags - CHANGED
@@ -30,4 +33,4 @@ No, this is optional but recommended.
 
 
 == Resources ==
-* whoop-splash.jpg © 2017 Dan Gold, (https://unsplash.com/license)
+* whoop-splash.jpg © Burst, (https://stocksnap.io/license)
