@@ -22,6 +22,9 @@ No, this is optional but recommended.
 
 == Changelog ==
 
+= 2.0.3 =
+* Archive page shows incorrect title in featured header hero section - FIXED
+
 = 2.0.2 =
 * Splash image replaced with GPL compatible image - FIXED
 
