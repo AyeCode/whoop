@@ -1,11 +1,15 @@
 @media (max-width: 992px) {
-
+  .site-header {
+    overflow: initial !important;
+  }
   #site-header {
-
     .header-top{
       flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
     }
     .container {
+      overflow: initial !important;
       &.header-credits{
         min-height: initial;
       }
@@ -20,6 +24,12 @@
 
     .header-user,.menu-wrapper{
       display: none;
+    }
+    .geodir-search {
+      .geodir_submit_search {
+        display: block;
+        width: 100% !important;
+      }
     }
   }
 
