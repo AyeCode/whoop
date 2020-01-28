@@ -22,6 +22,10 @@ No, this is optional but recommended.
 
 == Changelog ==
 
+= 2.0.3 =
+* Archive page shows incorrect title in featured header hero section - FIXED
+* Hooks added to filter post claim link/badge shortcodes - CHANGED
+
 = 2.0.2 =
 * Splash image replaced with GPL compatible image - FIXED
 
