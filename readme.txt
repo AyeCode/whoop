@@ -23,6 +23,9 @@ No, this is optional but recommended.
 == Changelog ==
 
 = 2.0.3 =
+* Advanced search dropdowns can be hidden by main body text - FIXED
+
+= 2.0.3 =
 * Archive page shows incorrect title in featured header hero section - FIXED
 * Hooks added to filter post claim link/badge shortcodes - CHANGED
 
