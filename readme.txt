@@ -3,8 +3,8 @@ Contributors: stiofansisland, ayecode
 Tags: food-and-drink, blog, one-column, two-columns, left-sidebar, right-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, translation-ready
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.3.2
-Stable tag: 2.0.3
+Tested up to: 5.4
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,11 @@ Create your very own yelp like directory site for your city or global directory 
 No, this is optional but recommended.
 
 == Changelog ==
+
+= 2.0.4 =
+* User menu custom menu not showing correctly - FIXED
+* UsersWP compatibility added for logged out and logged in menu items - ADDED
+* CSS sub menu hover color highlighting - ADDED
 
 = 2.0.3 =
 * Advanced search dropdowns can be hidden by main body text - FIXED
