@@ -31,9 +31,47 @@ class Whoop_Menus {
 		add_filter( 'wp_nav_menu_items', array( __CLASS__, 'font_awesome_menu_icons' ), 10, 2 );
 		add_filter( 'wp_nav_menu_user_items', array( __CLASS__, 'user_menu_button_classes' ), 10, 2 );
 
-
 		// user menu
 		add_action('dt_before_site_logo', array( __CLASS__,'mobile_user_menu'));
+
+		// UWP Account items
+		if( defined( 'USERSWP_VERSION' ) ){
+			add_filter("whoop_menu_account_items",array( __CLASS__,'uwp_account_items') );
+		}
+	}
+
+	/**
+	 * Add UWP menu items.
+	 * 
+	 * @param $html
+	 *
+	 * @return string
+	 */
+	public static function uwp_account_items($html){
+
+		$account_slug = uwp_get_page_slug('account_page');
+		$profile_slug = uwp_get_page_slug('profile_page');
+		$change_slug = uwp_get_page_slug('change_page');
+
+		if($profile_slug){
+			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-profile">';
+			$html .= '<a href="'.uwp_get_page_link('profile').'">'.__( "Profile", "whoop" ).'</a>';
+			$html .= '</li>';
+		}
+
+		if($account_slug){
+			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-account">';
+			$html .= '<a href="'.uwp_get_page_link('account').'">'.__( "Edit Account", "whoop" ).'</a>';
+			$html .= '</li>';
+		}
+
+		if($change_slug){
+			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-change">';
+			$html .= '<a href="'.uwp_get_change_page_url().'">'.__( "Change Password", "whoop" ).'</a>';
+			$html .= '</li>';
+		}
+
+		return $html;
 	}
 
 	public static function mobile_user_menu(){

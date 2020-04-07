@@ -35,7 +35,11 @@
               box-shadow: none;
               a{
                 background: #fff;
+                &:hover{
+                  background: #fafafa;
+                }
               }
+
             }
           }
           &:first-child{
