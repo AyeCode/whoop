@@ -22,6 +22,9 @@ No, this is optional but recommended.
 
 == Changelog ==
 
+= 2.0.5 =
+* UserWP login redirection issue with whoop - FIXED
+
 = 2.0.4 =
 * User menu custom menu not showing correctly - FIXED
 * UsersWP compatibility added for logged out and logged in menu items - ADDED
