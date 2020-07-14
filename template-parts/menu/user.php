@@ -35,11 +35,14 @@
 	}else{
 		$login_class = function_exists('uwp_get_option') && uwp_get_option("login_modal",1) ? 'uwp-login-link' : '';
 		$reg_class = function_exists('uwp_get_option') && uwp_get_option("register_modal",1) ? 'uwp-register-link' : '';
+		$reg_class = function_exists('uwp_get_option') && uwp_get_option("register_modal",1) ? 'uwp-register-link' : '';
+		// to avoid login redirection issue with userWP.
+		$redirect = !class_exists( 'UsersWP' ) ?  get_permalink() : '';
 		?>
 		<nav id="user-account-nav" class="primary-nav user_menu" role="navigation">
 			<ul id="menu-user" class="menu">
 				<li class="menu-item menu-item-type-custom menu-item-object-custom ">
-					<a class="dt-btn button whoop-button <?php echo $login_class;?>" href="<?php echo wp_login_url( get_permalink() )  ;?>"><?php _e( "Log in", "whoop" );?></a>
+					<a class="dt-btn button whoop-button <?php echo $login_class;?>" href="<?php echo wp_login_url( $redirect )  ;?>"><?php _e( "Log in", "whoop" );?></a>
 				</li>
 				<li class="whoop-register menu-item menu-item-type-custom menu-item-object-custom ">
 					<a class="dt-btn button whoop-button <?php echo $reg_class;?>" href="<?php echo wp_registration_url() ;?>"><?php _e( "Sign up", "whoop" );?></a>
