@@ -5,9 +5,9 @@
  * @since 1.0.2
  */
 do_action( 'dt_before_site_logo' ); ?>
-<div class="container header-top">
+<div class="container header-top my-auto">
 	<?php if ( $query_id = get_queried_object() ) { ?>
-		<h1 class="entry-title"><?php echo get_the_title( $query_id ); ?></h1>
+		<h1 class="entry-title text-white"><?php echo get_the_title( $query_id ); ?></h1>
 	<?php  } ?>
 	<?php
 //	get_template_part( 'template-parts/header/logo');
@@ -15,13 +15,3 @@ do_action( 'dt_before_site_logo' ); ?>
 	get_template_part( 'template-parts/menu/home','middle');
 	?>
 </div>
-<?php
-if ( has_nav_menu( 'primary-menu' ) ) {
-	/**
-	 * Filter the mobile navigation button html.
-	 *
-	 * @since 1.0.2
-	 */
-	echo apply_filters( 'dt_mobile_menu_button', '<div class="dt-nav-toggle  dt-mobile-nav-button-wrap"><a href="#primary-nav"><i class="fas fa-bars"></i></a></div>' );
-}
-?>

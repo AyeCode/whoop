@@ -30,14 +30,33 @@ class Whoop_Menus {
 		add_action( 'after_setup_theme', array( __CLASS__, 'theme_setup' ) );
 		add_filter( 'wp_nav_menu_items', array( __CLASS__, 'font_awesome_menu_icons' ), 10, 2 );
 		add_filter( 'wp_nav_menu_user_items', array( __CLASS__, 'user_menu_button_classes' ), 10, 2 );
-
-		// user menu
-		add_action('dt_before_site_logo', array( __CLASS__,'mobile_user_menu'));
+		add_filter( 'nav_menu_submenu_css_class', array( __CLASS__, 'sd_sub_menu_ul_class' )  , 15, 3 );
 
 		// UWP Account items
 		if( defined( 'USERSWP_VERSION' ) ){
 			add_filter("whoop_menu_account_items",array( __CLASS__,'uwp_account_items') );
 		}
+	}
+
+	/**
+	 * Modify the menu classes to add bootstrap styling.
+	 *
+	 * @param $classes
+	 * @param $args
+	 * @param $depth
+	 *
+	 * @return array
+	 */
+	public static function sd_sub_menu_ul_class( $classes, $args, $depth ) {
+
+//		print_r( $args );
+		if(!empty($args->theme_location) && $args->theme_location=='primary-menu'){
+			foreach ( $classes as $key => $class ) {
+				$classes[ $key ] = str_replace( "dropdown-menu-right", "", $classes[ $key ] );
+			}
+		}
+
+		return $classes;
 	}
 
 	/**
@@ -54,50 +73,26 @@ class Whoop_Menus {
 		$change_slug = uwp_get_page_slug('change_page');
 
 		if($profile_slug){
-			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-profile">';
-			$html .= '<a href="'.uwp_get_page_link('profile').'">'.__( "Profile", "whoop" ).'</a>';
+			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-profile nav-item">';
+			$html .= '<a href="'.uwp_get_page_link('profile').'" class="nav-link">'.__( "Profile", "whoop" ).'</a>';
 			$html .= '</li>';
 		}
 
 		if($account_slug){
-			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-account">';
-			$html .= '<a href="'.uwp_get_page_link('account').'">'.__( "Edit Account", "whoop" ).'</a>';
+			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-account nav-item">';
+			$html .= '<a href="'.uwp_get_page_link('account').'" class="nav-link">'.__( "Edit Account", "whoop" ).'</a>';
 			$html .= '</li>';
 		}
 
 		if($change_slug){
-			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-change">';
-			$html .= '<a href="'.uwp_get_change_page_url().'">'.__( "Change Password", "whoop" ).'</a>';
+			$html .= '<li class="gd-menu-item menu-item menu-item-uwp-change nav-item">';
+			$html .= '<a href="'.uwp_get_change_page_url().'" class="nav-link">'.__( "Change Password", "whoop" ).'</a>';
 			$html .= '</li>';
 		}
 
 		return $html;
 	}
 
-	public static function mobile_user_menu(){
-		?>
-		<div class="dt-mobile-account-wrap"><a href="#user-account-nav"><i class="fas fa-user"></i></a></div>
-		<script>
-			jQuery(function() {
-//				if (jQuery('#whoop-account-nav').length) {
-//					var $dt_menuleft = jQuery("#whoop-account-nav");
-//					$dt_menuleft.mmenu({}, {});
-//				}
-
-				var $dt_menuleft = jQuery("#user-account-nav");
-				$dt_menuleft.mmenu({
-					offCanvas: {
-						position: "left"
-					}
-				}, {
-					clone: 1
-				}); // clone it so we can do responsive
-
-			});
-		</script>
-		<?php
-
-	}
 
 	/**
 	 * Register menus.

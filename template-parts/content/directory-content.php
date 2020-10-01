@@ -1,5 +1,6 @@
 <article <?php post_class('whoop-archive-listings'); ?>>
 	<div class="entry-content entry-summary">
+		<h1 class="entry-title h3"><?php the_title(); ?></h1>
 		<?php
 		if (is_singular() || (function_exists('is_bbpress') && is_bbpress())) {
 			the_content();

@@ -40,9 +40,27 @@ class Whoop_Geodirectory_Content {
 		add_filter("geodir_default_page_location_content", array( __CLASS__, 'page_location_content' ) );
 		add_filter("geodir_default_page_search_content", array( __CLASS__, 'page_search_content' ) );
 		add_filter("geodir_default_page_archive_item_content", array( __CLASS__, 'page_archive_item_content' ) );
+//		add_filter("dt_header_extra_class", array( __CLASS__, 'header_class' ) );
+
 
 		// dummy widget content
 		add_filter('geodir_dummy_widgets',array( __CLASS__, 'dummy_widgets' ), 10, 2);
+	}
+
+	/**
+	 * Adjust the header classes.
+	 *
+	 * @param $class
+	 *
+	 * @return mixed
+	 */
+	public static function header_class($class){
+
+		if(geodir_is_page('single')){
+			$class = str_replace( "border-bottom", "", $class );
+		}
+
+		return $class;
 	}
 
 	public static function dummy_widgets($widgets, $type){

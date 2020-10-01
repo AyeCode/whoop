@@ -70,12 +70,12 @@ class Whoop_Hero_Background {
 
 				if(!empty($ids[$item])){
 					$id = $ids[$item];
-					$image = wp_get_attachment_image($id,  'full', false, array( 'class' => 'whoop-hero-image whoop-js-fade-in' ) );
+					$image = wp_get_attachment_image($id,  'full', false, array( 'class' => 'whoop-hero-image w-100 embed-item-cover-xy whoop-js-fade-in position-absolute','loading'=>'eager' ) );
 				}
 
 
 				if($image){
-					$image = str_replace("<img","<img onload='jQuery(this).fadeIn(500)'",$image  );
+					$image = str_replace("<img","<img onload='jQuery(this).fadeIn(500)' style='display:none;'",$image  );
 					wp_send_json_success( array(
 						'html' => $image,
 						'caption' => wp_get_attachment_caption( $id ),
@@ -88,8 +88,8 @@ class Whoop_Hero_Background {
 			}elseif($settings['type']=='listing'){
 				$image_data = self::get_listing_image();
 				if(!empty($image_data)){
-					$image_data['html'] = str_replace("<img","<img onload='jQuery(this).fadeIn(500)'",$image_data['html'] );
-					$image_data['html'] = str_replace('class="','class="whoop-hero-image whoop-js-fade-in ',$image_data['html'] );
+					$image_data['html'] = str_replace("<img","<img onload='jQuery(this).fadeIn(500)' style='display:none;' ",$image_data['html'] );
+					$image_data['html'] = str_replace('class="','class="whoop-hero-image w-100 embed-item-cover-xy whoop-js-fade-in position-absolute ',$image_data['html'] );
 					wp_send_json_success( $image_data );
 				}else{
 					wp_send_json_error();
@@ -116,8 +116,8 @@ class Whoop_Hero_Background {
 	public static function credits($html){
 		global $whoop_hero_credits;
 		if(!empty($whoop_hero_credits)){
-			echo '<div class="container header-credits">';
-			echo '<p class="whoop-hero-credits-caption">';
+			echo '<div class="container header-credits position-absolute" style="bottom:0;">';
+			echo '<p class="whoop-hero-credits-caption text-white font-weight-bold">';
 			if(!empty($whoop_hero_credits['caption'])){ echo $whoop_hero_credits['caption'];}
 			echo '</p>';
 			echo '<p class="whoop-hero-credits-description">';
@@ -131,7 +131,7 @@ class Whoop_Hero_Background {
 	public static function output_featured(){
 		global $whoop_hero_credits,$post;
 		$post_id = isset($post->ID) ? $post->ID : '';
-		$image =  get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'whoop-hero-image ' ) );
+		$image =  get_the_post_thumbnail( $post_id, 'full', array( 'class' => 'whoop-hero-image w-100 embed-item-cover-xy ' ) );
 
 		if($image){
 			$id = get_post_thumbnail_id();
@@ -147,12 +147,12 @@ class Whoop_Hero_Background {
 	public static function output_default(){
 		global $whoop_hero_credits;
 		$user_name = "Burst";
-		$user_link = "<a href='https://burst.shopify.com//' target='_blank' rel=\"nofollow\">$user_name</a>";
+		$user_link = "<a href='https://burst.shopify.com//' target='_blank' rel=\"nofollow\" class='text-white font-weight-bold'>$user_name</a>";
 		$whoop_hero_credits = array(
 			'caption' => 'Gourmet Cafe',
 			'description' => sprintf(__("Photo by %s","whoop"),$user_link ),
 		);
-		$image = '<img width="1600" height="1066" src="'.get_stylesheet_directory_uri().'/assets/images/whoop-splash.jpg" class="whoop-hero-image  wp-post-image " alt="" srcset="'.get_stylesheet_directory_uri().'/assets/images/whoop-splash.jpg 1600w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-300x200.jpg 300w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-768x512.jpg 768w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-1024x682.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px">';
+		$image = '<img width="1600" height="1066" src="'.get_stylesheet_directory_uri().'/assets/images/whoop-splash.jpg" class="whoop-hero-image w-100 embed-item-cover-xy  wp-post-image " alt="" srcset="'.get_stylesheet_directory_uri().'/assets/images/whoop-splash.jpg 1600w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-300x200.jpg 300w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-768x512.jpg 768w, '.get_stylesheet_directory_uri().'/assets/images/whoop-splash-1024x682.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px">';
 		return $image;
 	}
 
@@ -165,7 +165,7 @@ class Whoop_Hero_Background {
 			'description' => '',
 		);
 
-		$html .= '<iframe onload=\'jQuery(this).addClass("whoop-fade-in")\' src="https://www.youtube.com/embed/'.$video_id.'?controls=0&rel=0&autoplay=1&loop=1&playlist='.$video_id.'&modestbranding=1&iv_load_policy=3&disablekb=1&mute=1" frameborder="0" allowfullscreen></iframe>';
+		$html .= '<iframe onload=\'jQuery(this).addClass("whoop-fade-in")\' src="https://www.youtube.com/embed/'.$video_id.'?controls=0&rel=0&autoplay=1&loop=1&playlist='.$video_id.'&modestbranding=1&iv_load_policy=3&disablekb=1&mute=1" frameborder="0" allowfullscreen class="w-100 embed-item-cover-xy position-absolute border-0" style="top:0;left:0;object-fit: cover;pointer-events: none;"></iframe>';
 		return $html;
 	}
 
@@ -180,7 +180,7 @@ class Whoop_Hero_Background {
 		$image = '';
 		foreach($ids as $id ){
 			$id = absint($id);
-			$image = wp_get_attachment_image($id,  'full', array( 'class' => 'whoop-hero-image ' ) );
+			$image = wp_get_attachment_image($id,  'full',false, array( 'class' => 'whoop-hero-image w-100 embed-item-cover-xy position-absolute ','loading'=>'eager' ) );
 			if($image){
 				break;
 			}
@@ -202,10 +202,10 @@ class Whoop_Hero_Background {
 		$image_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM " . GEODIR_ATTACHMENT_TABLE . " WHERE type = %s AND featured = 1 AND is_approved = 1 ORDER BY RAND() LIMIT 1 ",'post_images'));
 
 		if($image_data){
-			$img_tag = geodir_get_image_tag($image_data,'full' );
+			$img_tag = geodir_get_image_tag($image_data,'full','','whoop-hero-image w-100 embed-item-cover-xy whoop-js-fade-in position-absolute' );
 			$meta = isset($image_data->metadata) ? maybe_unserialize($image_data->metadata) : '';
 			$image_tag =  wp_image_add_srcset_and_sizes( $img_tag, $meta , 0 );
-			$permalink = "<a href='".get_permalink($image_data->post_id)."'>".esc_attr( get_the_title($image_data->post_id) )."</a>";
+			$permalink = "<a href='".get_permalink($image_data->post_id)."' class='text-white font-weight-bold'>".esc_attr( get_the_title($image_data->post_id) )."</a>";
 			$image = array(
 				'html'  => $image_tag,
 				'caption' => $permalink,
@@ -243,6 +243,8 @@ class Whoop_Hero_Background {
 			'description' => '',
 		);
 		$script = '';
+		$inner_style = '';
+		$inner_class = '';
 		$brightness = '';
 
 		// get settings
@@ -266,7 +268,8 @@ class Whoop_Hero_Background {
 			$html .= self::output_featured();
 		}elseif($settings['type']=='video'){
 			$html .= self::output_video($settings['id']);
-//			$html .= self::output_featured();
+			$inner_style .= 'padding-top: 56.25%;';
+			$inner_class .= 'position-relative';
 		}elseif($settings['type']=='gallery' && !empty($settings['id'])){
 			$html .= self::output_gallery($settings['id']);
 			$script = self::hero_script($settings);
@@ -287,10 +290,12 @@ class Whoop_Hero_Background {
 
 		// brightness overide (default 50)
 		if(!empty($settings['brightness']) && $settings['brightness'] <= 100){
-			$brightness = " style='filter: brightness(".$settings['brightness']."%);' ";
+			$brightness = " filter: brightness(".$settings['brightness']."%); ";
+		}else{
+			$brightness = " filter: brightness(50%); ";
 		}
 
-		$container_open = "<div $brightness class='whoop-hero-background-wrap'><div class='whoop-hero-background-wrap-inner'>";
+		$container_open = "<div class='whoop-hero-background-wrap w-100 position-absolute h-100 overflow-hidden w-100' style='top:0;left:0;$brightness'><div class='whoop-hero-background-wrap-inner $inner_class' style='$inner_style'>";
 		$container_close = "</div></div>";
 
 		return $container_open.$html.$container_close.$script;
