@@ -4,7 +4,7 @@ Tags: food-and-drink, blog, one-column, two-columns, left-sidebar, right-sidebar
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.4
-Stable tag: 2.0.4
+Stable tag: 2.1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,10 @@ Create your very own yelp like directory site for your city or global directory 
 No, this is optional but recommended.
 
 == Changelog ==
+
+= 2.1.0.0 =
+* Changes for AyeCode UI compatibility - CHANGED
+* Theme changed to use bootstrap styles, this is a very big change and may need some manual changes - WARNING
 
 = 2.0.5 =
 * UserWP login redirection issue with whoop - FIXED
@@ -46,6 +50,8 @@ No, this is optional but recommended.
 
 == Upgrade Notice ==
 
+= 2.1.0 =
+NOTICE: v2.1 has changed to using bootstrap styles, this is a huge design change that should be checked over.
 
 == Resources ==
 * whoop-splash.jpg © Burst, (https://stocksnap.io/license)
