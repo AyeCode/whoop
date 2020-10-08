@@ -19,7 +19,7 @@ if ($enable_header_top == '1') {
 }
 ?>
 <header id="site-header" class="site-header <?php echo apply_filters('dt_header_extra_class', $extra_class); ?> <?php echo esc_attr( get_theme_mod('dt_header_shadow', DT_HEADER_SHADOW) ); ?>" role="banner" style="<?php echo dt_header_image(); ?>">
-	<nav class="navbar navbar-expand-lg navbar-light pb-0 <?php if(get_theme_mod('dt_container_full', DT_CONTAINER_FULL)){echo 'container-fluid';}else{ echo "container";}?>" style="z-index: 1025;">
+	<nav class="navbar navbar-expand-lg navbar-light pb-0 navbar-multi-sub-menus <?php if(get_theme_mod('dt_container_full', DT_CONTAINER_FULL)){echo 'container-fluid';}else{ echo "container";}?>" style="z-index: 1025;">
 		<?php
 		/**
 		 * This action is called before the site logo wrapper.
@@ -67,19 +67,12 @@ if ($enable_header_top == '1') {
 		<div class="collapse navbar-collapse " id="primary-nav">
 			<?php
 			get_template_part( 'template-parts/header/search');
-//			if ( has_nav_menu( 'primary-menu' ) ) {
-//				wp_nav_menu( array(
-//					'container'      => false,
-//					'theme_location' => 'primary-menu',
-//					'menu_class' => 'navbar-nav ml-auto text-nowrap flex-wrap'
-//				) );
-//			}
 			get_template_part( 'template-parts/menu/user');
 			?>
 		</div>
 	</nav>
 
-	<nav class="navbar navbar-expand-lg navbar-light p-0 <?php if(get_theme_mod('dt_container_full', DT_CONTAINER_FULL)){echo 'container-fluid';}else{ echo "container";}?>">
+	<nav class="navbar navbar-expand-lg navbar-light p-0 navbar-multi-sub-menus <?php if(get_theme_mod('dt_container_full', DT_CONTAINER_FULL)){echo 'container-fluid';}else{ echo "container";}?>">
 		<div class="collapse navbar-collapse " id="primary-nav">
 		<?php
 		if ( has_nav_menu( 'primary-menu' ) ) {
