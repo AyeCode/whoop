@@ -130,7 +130,7 @@ class Whoop_Menus {
 				$pattern = "/.*[\ \\\"\']+(fa[srlb] )+(fa-[a-z-]*).*/";
 				if(preg_match($pattern,$item,$m)){
 					if(!empty($m[2])){
-						$icon = "<i class='".$m[1].$m[2]."'></i>";
+						$icon = "<i class='".$m[1].$m[2]." mr-1'></i>";
 						$item = str_replace($m[1].$m[2],'',$item); // remove original classes
 						$items_array[$key] = str_replace(array('"><a','">'),array('" ><a','">'.$icon ),$item);
 					}

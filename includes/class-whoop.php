@@ -50,7 +50,7 @@ class Whoop {
 		add_action( 'dt_footer_copyright', 'whoop_copyright_text', 10 );
 
 		// remove support for the top widget area as we add nothing there by default (users can still add things)
-		remove_theme_support( 'geodirectory-sidebar-top' );
+//		remove_theme_support( 'geodirectory-sidebar-top' );
 	}
 	
 }

@@ -21,7 +21,7 @@
 				<li  class="menu-item menu-item-has-children nav-item">
 					<a class="dt-btn button whoop-button whoop-my-account nav-link" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<?php
-						echo get_avatar( $user_id, 36,'mm','', array('class'=>"comment_avatar rounded-circle","extra_attr"=> ' data-toggle="tooltip" data-placement="bottom" title="'.esc_attr( $current_user->user_login ).'" ') );
+						echo get_avatar( $user_id, 40,'mm','', array('class'=>"comment_avatar rounded-circle border border-white border-width-2","extra_attr"=> ' data-toggle="tooltip" data-placement="bottom" title="'.esc_attr( $current_user->user_login ).'" ') );
 						?>
 						<span class="sr-only"><?php _e( "My Account", "whoop" );?></span>
 					</a>
