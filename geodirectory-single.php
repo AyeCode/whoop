@@ -6,7 +6,17 @@ get_header();
 
 do_action('dt_page_before_main_content');
 
-$dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', DT_BLOG_SIDEBAR_POSITION));
+$dt_enable_gd_sidebar = esc_attr(get_theme_mod('dt_enable_gd_sidebar', DT_ENABLE_GD_SIDEBAR));
+$dt_gd_sidebar_position = esc_attr(get_theme_mod('dt_gd_sidebar_position', DT_GD_SIDEBAR_POSITION));
+$dt_gd_sidebar_position_mobile = esc_attr(get_theme_mod('dt_gd_sidebar_position_mobile', DT_GD_SIDEBAR_POSITION_MOBILE));
+
+if ( $dt_enable_gd_sidebar ) {
+	$content_class = 'col-lg-8 col-md-9';
+	$content_class .= $dt_gd_sidebar_position == 'right' ? ' order-md-first' : ' order-md-last';
+	$content_class .= $dt_gd_sidebar_position_mobile == 'bottom' ? ' order-first' : ' order-last';
+} else {
+	$content_class = 'col-lg-12';
+}
 ?>
 	<div class="fullwidth-sidebar-container">
 		<div class="sidebar top-sidebar">
@@ -14,17 +24,10 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 		</div>
 	</div>
 
-	<section class="<?php if(get_theme_mod('dt_container_full', DT_CONTAINER_FULL)){echo 'container-fluid';}else{ echo "container";}?> py-4">
+	<div class="<?php if(get_theme_mod('dt_container_full', DT_CONTAINER_FULL)){echo 'container-fluid';}else{ echo "container";}?> py-4">
 
 		<div class="row">
-			<?php if ($dt_blog_sidebar_position == 'left') { ?>
-				<div class="col-lg-4 col-md-3">
-					<div class="sidebar blog-sidebar page-sidebar sticky-top">
-						<?php dynamic_sidebar('sidebar-gd'); ?>
-					</div>
-				</div>
-			<?php } ?>
-			<div class="col-lg-8 col-md-9">
+			<section class="<?php echo $content_class; ?>">
 				<div class="content-single">
 					<?php if (!have_posts()) : ?>
 						<div class="alert alert-warning">
@@ -47,16 +50,16 @@ $dt_blog_sidebar_position = esc_attr(get_theme_mod('dt_blog_sidebar_position', D
 					endwhile;
 					?>
 				</div>
-			</div>
-			<?php if ($dt_blog_sidebar_position == 'right') { ?>
-				<div class="col-lg-4 col-md-3">
+			</section>
+			<?php if ( $dt_enable_gd_sidebar ) { ?>
+				<aside class="col-lg-4 col-md-3">
 					<div class="sidebar blog-sidebar page-sidebar sticky-top">
 						<?php dynamic_sidebar('sidebar-gd'); ?>
 					</div>
-				</div>
+				</aside>
 			<?php } ?>
 		</div>
-	</section>
+	</div>
 
 	<div class="fullwidth-sidebar-container">
 		<div class="sidebar bottom-sidebar">
