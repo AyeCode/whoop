@@ -22,6 +22,9 @@ No, this is optional but recommended.
 
 == Changelog ==
 
+= 2.1.0.2 =
+* Home page should show logo like Yelp site - CHANGED
+
 = 2.1.0.1 =
 * Some page templates changed for new features - CHANGED
 

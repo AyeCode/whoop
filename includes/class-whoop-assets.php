@@ -108,6 +108,12 @@ class Whoop_Assets {
 		display: block;
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%) scale(0.5);
+	}
+
+	.page.home .featured-area .site-logo img {
+		max-height: 160px;
+		max-width: 120px;
+	}
 		<?php if(0){ ?></style><?php }
 	}
 
