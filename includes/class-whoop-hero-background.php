@@ -196,24 +196,31 @@ class Whoop_Hero_Background {
 		return $image;
 	}
 
-	public static function get_listing_image(){
+	public static function get_listing_image() {
 		global $wpdb;
-		$image = array('html'=>'','caption'=>'','description'=>'');
-		$image_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM " . GEODIR_ATTACHMENT_TABLE . " WHERE type = %s AND featured = 1 AND is_approved = 1 ORDER BY RAND() LIMIT 1 ",'post_images'));
 
-		if($image_data){
-			$img_tag = geodir_get_image_tag($image_data,'full','','whoop-hero-image w-100 embed-item-cover-xy whoop-js-fade-in position-absolute' );
-			$meta = isset($image_data->metadata) ? maybe_unserialize($image_data->metadata) : '';
+		$image = array( 
+			'html' => '',
+			'caption' => '',
+			'description' => ''
+		);
+
+		$sql = $wpdb->prepare( "SELECT * FROM " . GEODIR_ATTACHMENT_TABLE . " AS a LEFT JOIN {$wpdb->posts} AS p ON p.ID = a.post_id WHERE a.type = %s AND a.featured = 1 AND a.is_approved = 1 AND p.post_status = 'publish' ORDER BY RAND() LIMIT 1", 'post_images' );
+
+		$attachment = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . GEODIR_ATTACHMENT_TABLE . " AS a LEFT JOIN {$wpdb->posts} AS p ON p.ID = a.post_id WHERE a.type = %s AND a.featured = 1 AND a.is_approved = 1 AND p.post_status = 'publish' ORDER BY RAND() LIMIT 1", 'post_images' ) );
+
+		if ( ! empty( $attachment) ) {
+			$img_tag = geodir_get_image_tag( $attachment, 'full', '', 'whoop-hero-image w-100 embed-item-cover-xy whoop-js-fade-in position-absolute' );
+			$meta = ! empty( $attachment->metadata ) ? maybe_unserialize( $attachment->metadata ) : '';
 			$image_tag =  wp_image_add_srcset_and_sizes( $img_tag, $meta , 0 );
-			$permalink = "<a href='".get_permalink($image_data->post_id)."' class='text-white font-weight-bold'>".esc_attr( get_the_title($image_data->post_id) )."</a>";
+			$permalink = "<a href='" . get_permalink( $attachment->post_id ) . "' class='text-white font-weight-bold'>" . esc_attr( get_the_title( $attachment->post_id ) ) . "</a>";
+
 			$image = array(
 				'html'  => $image_tag,
 				'caption' => $permalink,
-				'description' => $image_data->title ? esc_attr($image_data->title) : '',
+				'description' => $attachment->title ? esc_attr( $attachment->title ) : '',
 			);
 		}
-
-//		print_r($image);exit;
 
 		return $image;
 	}
@@ -306,7 +313,6 @@ class Whoop_Hero_Background {
 		ob_start();
 		?>
 		<script>
-			
 			function whoop_hero_get_next(wait,count){
 				var params = [];
 				params['action'] = 'whoop_hero';
@@ -318,11 +324,9 @@ class Whoop_Hero_Background {
 					data: {
 						action: 'whoop_hero',
 						count: count,
-						post_id: <?php echo $post->ID;?>
+						post_id: <?php echo (int) $post->ID;?>
 					},
 					success: function(res) {
-						console.log(res);
-//						alert(1);
 						if (res.success && res.data) {
 							if (res.data.html) {
 								jQuery('.whoop-hero-background-wrap-inner').append(res.data.html);
@@ -333,16 +337,13 @@ class Whoop_Hero_Background {
 
 								description = res.data.description ? res.data.description : '';
 								jQuery('.whoop-hero-credits-description').html(description);
-
-
 							}
 						}
 						count++;
 						setTimeout(function(){whoop_hero_get_next(wait ,count)},wait );
-
 					},
 					fail: function(data) {
-						alert('fail');
+						console.log(data);
 					}
 				});
 			}
@@ -350,7 +351,6 @@ class Whoop_Hero_Background {
 				var whoopHeroWait = <?php echo $settings['time'] && $settings['time'] > 1000 ? absint($settings['time']) : 8000;?>;
 				var whoopHeroCount = 1;
 				setTimeout(function(){whoop_hero_get_next(whoopHeroWait ,whoopHeroCount)},whoopHeroWait );
-
 			});
 		</script>
 		<?php
@@ -393,42 +393,33 @@ class Whoop_Hero_Background {
 		}
 	}
 
-	public static function meta_box_html($post)
-	{
+	public static function meta_box_html( $post ) {
 		$defaults = self::default_settings();
-		$settings = get_post_meta($post->ID, '_whoop_hero', true);
-		$settings = wp_parse_args($settings,$defaults);
+		$settings = get_post_meta( $post->ID, '_whoop_hero', true );
+		$settings = wp_parse_args( $settings, $defaults );
 		$options = array(
-			''  => __('Auto','whoop'),
-			'featured'  => __('Featured image','whoop'),
-			'video'  => __('Video','whoop'),
-			'gallery'  => __('Gallery','whoop'),
-			'listing'  => __('Listing images (GeoDirectory)','whoop'),
+			'' => __('Auto','whoop'),
+			'featured' => __('Featured image','whoop'),
+			'video' => __('Video','whoop'),
+			'gallery' => __('Gallery','whoop'),
+			'listing' => __('Listing images (GeoDirectory)','whoop'),
 		);
 		?>
-		<label for="whoop_hero_type"><?php _e('Show:','whoop');?></label>
-		<select name="_whoop_hero[type]" id="whoop_hero_type" class="postbox">
+		<p class="post-attributes-label-wrapper whoop-hero-type-label-wrapper"><label class="post-attributes-label" for="whoop_hero_type"><?php _e( 'Show:', 'whoop' ); ?></label></p>
+		<select name="_whoop_hero[type]" id="whoop_hero_type">
 			<?php
-				
-			foreach($options as $option => $desc){
-				echo '<option value="'.$option.'" '.selected($settings['type'], $option).'>'.$desc.'</option>';
+			foreach( $options as $option => $desc ) {
+				echo '<option value="' . $option . '" ' . selected( $settings['type'], $option, false ) . '>' . $desc . '</option>';
 			}
 			?>
 		</select>
-
-		<label for="whoop_hero_id"><?php _e('ID: (video id / attachments ids: 123,456,789)','whoop');?></label>
-		<input type="text" name="_whoop_hero[id]" id="whoop_hero_id" value="<?php echo esc_attr($settings['id']);?>" placeholder="AjZXFw9iWkw / 123,456,789" />
-
-		<label for="whoop_hero_time"><?php _e('Time: (time between images, 8000 =  8 seconds)','whoop');?></label>
-		<input type="number" min="1000" name="_whoop_hero[time]" id="whoop_hero_time" value="<?php echo esc_attr($settings['time']);?>" placeholder="8000" />
-
-		<label for="whoop_hero_brightness"><?php _e('Brightness: (how bright the background is, default 50%)','whoop');?></label>
-		<input type="number" name="_whoop_hero[brightness]" id="whoop_hero_brightness" value="<?php echo esc_attr($settings['brightness']);?>" placeholder="50" />
+		<p class="post-attributes-label-wrapper whoop-hero-id-label-wrapper"><label class="post-attributes-label" for="whoop_hero_id"><?php _e( 'ID: (video id / attachments ids: 123,456,789)', 'whoop' ); ?></label></p>
+		<input type="text" name="_whoop_hero[id]" id="whoop_hero_id" value="<?php echo esc_attr( $settings['id'] ); ?>" placeholder="AjZXFw9iWkw / 123,456,789" />
+		<p class="post-attributes-label-wrapper whoop-hero-time-label-wrapper"><label class="post-attributes-label" for="whoop_hero_time"><?php _e( 'Time: (time between images, 8000 =  8 seconds)', 'whoop' );?></label></p>
+		<input type="number" min="1000" name="_whoop_hero[time]" id="whoop_hero_time" value="<?php echo esc_attr( $settings['time'] ); ?>" placeholder="8000" />
+		<p class="post-attributes-label-wrapper whoop-hero-brightness-label-wrapper"><label class="post-attributes-label" for="whoop_hero_brightness"><?php _e( 'Brightness: (how bright the background is, default 50%)', 'whoop' ); ?></label></p>
+		<input type="number" name="_whoop_hero[brightness]" id="whoop_hero_brightness" value="<?php echo esc_attr( $settings['brightness'] ); ?>" placeholder="50" />
 		<?php
 	}
-
-
-
-
 }
 Whoop_Hero_Background::init();
