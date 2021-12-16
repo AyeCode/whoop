@@ -3,7 +3,7 @@ Contributors: stiofansisland, ayecode
 Tags: food-and-drink, blog, one-column, two-columns, left-sidebar, right-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, translation-ready
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 2.1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ No, this is optional but recommended.
 
 == Changelog ==
 
+= 2.1.0.3 =
+* Home page background slideshow shows images from non published listings - FIXED
+
 = 2.1.0.2 =
 * Home page should show logo like Yelp site - CHANGED
 
@@ -33,7 +36,7 @@ No, this is optional but recommended.
 * Theme changed to use bootstrap styles, this is a very big change and may need some manual changes - WARNING
 
 = 2.0.5 =
-* UserWP login redirection issue with whoop - FIXED
+* UsersWP login redirection issue with whoop - FIXED
 
 = 2.0.4 =
 * User menu custom menu not showing correctly - FIXED
@@ -41,7 +44,7 @@ No, this is optional but recommended.
 * CSS sub menu hover color highlighting - ADDED
 
 = 2.0.3 =
-* Advanced search dropdowns can be hidden by main body text - FIXED
+* Advanced search dropdown can be hidden by main body text - FIXED
 
 = 2.0.3 =
 * Archive page shows incorrect title in featured header hero section - FIXED
