@@ -1,21 +1,23 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Whoop 2.0.3\n"
+"Project-Id-Version: Whoop 2.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-30 16:10+0530\n"
-"PO-Revision-Date: 2020-01-30 16:10+0530\n"
+"POT-Creation-Date: 2022-12-22 14:38+0530\n"
+"PO-Revision-Date: 2022-12-22 14:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: AyeCode Ltd <contact@ayecode.io>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;_n_noop:1,2;"
-"_nx:1,2;_nx_noop:1,2;_x;esc_attr_e;esc_attr__\n"
+"X-Poedit-KeywordsList: __;__ngettext:1,2;__ngettext_noop:1,2;_c;_e;_ex:1,2c;"
+"_n:1,2;_n_noop:1,2;_nc:4c,1,2;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;gettext;"
+"gettext_noop\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: functions.php:17
@@ -32,96 +34,96 @@ msgstr ""
 msgid " - Powered by %s."
 msgstr ""
 
-#: geodirectory-archive.php:34 geodirectory-single-new.php:42
-#: geodirectory-single.php:35 geodirectory.php:31 page-whoop.php:18
+#: geodirectory-archive.php:31 geodirectory-single-new.php:44
+#: geodirectory-single.php:34 geodirectory.php:34 page-whoop.php:18
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:79
+#: includes/class-whoop-geodirectory-content.php:103
 msgid "GD Dashboard"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:81
+#: includes/class-whoop-geodirectory-content.php:105
 msgid "Login"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:211
+#: includes/class-whoop-geodirectory-content.php:358
 msgid "Content updated successfully."
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:213
+#: includes/class-whoop-geodirectory-content.php:360
 msgid "Something went wrong."
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:233
+#: includes/class-whoop-geodirectory-content.php:380
 msgid "Rating style updated successfully."
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:248
+#: includes/class-whoop-geodirectory-content.php:395
 msgid "Reviews tab order updated successfully."
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:263
+#: includes/class-whoop-geodirectory-content.php:410
 msgid "Whoop Content"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:271
+#: includes/class-whoop-geodirectory-content.php:418
 msgid "Home page, create and set content (should only be run once)"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:272
+#: includes/class-whoop-geodirectory-content.php:419
 msgid "Details page"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:273
+#: includes/class-whoop-geodirectory-content.php:420
 msgid "Archive item page"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:274
+#: includes/class-whoop-geodirectory-content.php:421
 msgid "Archive page"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:275
+#: includes/class-whoop-geodirectory-content.php:422
 msgid "Search page"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:276
+#: includes/class-whoop-geodirectory-content.php:423
 msgid "Location page"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:282
+#: includes/class-whoop-geodirectory-content.php:429
 msgid "Description"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:283
+#: includes/class-whoop-geodirectory-content.php:430
 msgid "Action"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:301
+#: includes/class-whoop-geodirectory-content.php:448
 msgid "Create page & content"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:301
+#: includes/class-whoop-geodirectory-content.php:448
 msgid "Set page content"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:317
+#: includes/class-whoop-geodirectory-content.php:464
 msgid "Rating icon style, change to Whoop style."
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:322
+#: includes/class-whoop-geodirectory-content.php:469
 msgid "Set rating style"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:332
+#: includes/class-whoop-geodirectory-content.php:479
 msgid "Set details page reviews tab to be shown first."
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:337
+#: includes/class-whoop-geodirectory-content.php:484
 msgid "Set tabs order"
 msgstr ""
 
-#: includes/class-whoop-geodirectory-content.php:354
+#: includes/class-whoop-geodirectory-content.php:501
 msgid "This will replace the page content with one specific to the theme."
 msgstr ""
 
@@ -130,39 +132,39 @@ msgstr ""
 msgid "Photo by %s"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:383
+#: includes/class-whoop-hero-background.php:388
 msgid "Hero Area Settings"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:397
+#: includes/class-whoop-hero-background.php:401
 msgid "Auto"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:398
+#: includes/class-whoop-hero-background.php:402
 msgid "Featured image"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:399
+#: includes/class-whoop-hero-background.php:403
 msgid "Video"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:400
+#: includes/class-whoop-hero-background.php:404
 msgid "Gallery"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:401
+#: includes/class-whoop-hero-background.php:405
 msgid "Listing images (GeoDirectory)"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:404
+#: includes/class-whoop-hero-background.php:408
 msgid "Show:"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:414
+#: includes/class-whoop-hero-background.php:416
 msgid "ID: (video id / attachments ids: 123,456,789)"
 msgstr ""
 
-#: includes/class-whoop-hero-background.php:417
+#: includes/class-whoop-hero-background.php:418
 msgid "Time: (time between images, 8000 =  8 seconds)"
 msgstr ""
 
@@ -170,15 +172,27 @@ msgstr ""
 msgid "Brightness: (how bright the background is, default 50%)"
 msgstr ""
 
-#: includes/class-whoop-menus.php:69
+#: includes/class-whoop-menus.php:77
+msgid "Profile"
+msgstr ""
+
+#: includes/class-whoop-menus.php:83
+msgid "Edit Account"
+msgstr ""
+
+#: includes/class-whoop-menus.php:89
+msgid "Change Password"
+msgstr ""
+
+#: includes/class-whoop-menus.php:102
 msgid "Home menu"
 msgstr ""
 
-#: includes/class-whoop-menus.php:70
+#: includes/class-whoop-menus.php:103
 msgid "Home middle menu"
 msgstr ""
 
-#: includes/class-whoop-menus.php:71
+#: includes/class-whoop-menus.php:104
 msgid "User menu"
 msgstr ""
 
@@ -198,13 +212,13 @@ msgstr ""
 msgid "All Filters"
 msgstr ""
 
-#: template-parts/content/directory-content.php:13
-#: template-parts/content/single.php:13
+#: template-parts/content/directory-content.php:14
+#: template-parts/content/single.php:16
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content/directory-content.php:22
-#: template-parts/content/home.php:9 template-parts/content/single.php:22
+#: template-parts/content/directory-content.php:23
+#: template-parts/content/home.php:9 template-parts/content/single.php:25
 msgid "Edit"
 msgstr ""
 
@@ -252,19 +266,19 @@ msgstr ""
 msgid "Add a main menu and it will show here"
 msgstr ""
 
-#: template-parts/menu/user.php:22
+#: template-parts/menu/user.php:26
 msgid "My Account"
 msgstr ""
 
-#: template-parts/menu/user.php:26
+#: template-parts/menu/user.php:31
 msgid "Log out"
 msgstr ""
 
-#: template-parts/menu/user.php:38
+#: template-parts/menu/user.php:48
 msgid "Log in"
 msgstr ""
 
-#: template-parts/menu/user.php:41
+#: template-parts/menu/user.php:51
 msgid "Sign up"
 msgstr ""
 
