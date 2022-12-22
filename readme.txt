@@ -4,7 +4,7 @@ Tags: food-and-drink, blog, one-column, two-columns, left-sidebar, right-sidebar
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.1
-Stable tag: 2.1.0.2
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,17 +22,17 @@ No, this is optional but recommended.
 
 == Changelog ==
 
-= 2.1.0.3 =
+= 2.1.1 - 2022-12-22 =
 * Home page background slideshow shows images from non published listings - FIXED
 * Replace dummy images CDN url - CHANGED
 
-= 2.1.0.2 =
+= 2.1.0.2 - 2021-03-24 =
 * Home page should show logo like Yelp site - CHANGED
 
-= 2.1.0.1 =
+= 2.1.0.1 - 2021-03-23 =
 * Some page templates changed for new features - CHANGED
 
-= 2.1.0.0 =
+= 2.1.0.0 - 2020-10-09 =
 * Changes for AyeCode UI compatibility - CHANGED
 * Theme changed to use bootstrap styles, this is a very big change and may need some manual changes - WARNING
 
